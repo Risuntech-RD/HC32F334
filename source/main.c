@@ -107,25 +107,25 @@ void Delay_ms(volatile uint32_t u32Ms)
  */
 static void debug_output(void)
 {
-    char    UadebugData[64];
+    char    uartDebugData[64];
 
     Log_SendString("***************************************************************\r\n");
     /* 系统时钟输出 */
-    snprintf(UadebugData, sizeof(UadebugData), "System Build time: %s %s\r\n", __DATE__, __TIME__);
-    Log_SendString(UadebugData);
-    snprintf(UadebugData, sizeof(UadebugData), "SystemCoreClock = %d MHz\r\n", (int)(SystemCoreClock / 1000000U));
-    Log_SendString(UadebugData);
+    snprintf(uartDebugData, sizeof(uartDebugData), "System Build time: %s %s\r\n", __DATE__, __TIME__);
+    Log_SendString(uartDebugData);
+    snprintf(uartDebugData, sizeof(uartDebugData), "SystemCoreClock = %d MHz\r\n", (int)(SystemCoreClock / 1000000U));
+    Log_SendString(uartDebugData);
 
     /* 确认系统时钟源和 PLL 源 */
     const char *const ClkSource[8] = {"HRC",  "MRC", "LRC", "XTAL", "XTAL32", "PLLH", "RSV", "RSV"};
     const char *const PllSource[3] = {"XTAL", "HRC", "RSV"};
 
-    snprintf(UadebugData,
-            sizeof(UadebugData),
+    snprintf(uartDebugData,
+            sizeof(uartDebugData),
             "SystemClockSource = %s, PLLSource = %s\r\n",
             ClkSource[(uint8_t)(CM_CMU->CKSWR & CMU_CKSWR_CKSW)],
             PllSource[(uint8_t)((CM_CMU->PLLHCFGR & CMU_PLLHCFGR_PLLSRC) >> CMU_PLLHCFGR_PLLSRC_POS)]);
-    Log_SendString(UadebugData);
+    Log_SendString(uartDebugData);
     Log_SendString("***************************************************************\r\n\r\n");
 
 }

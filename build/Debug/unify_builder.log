@@ -26,3 +26,12 @@ These source files will be recompiled
 [2026-10-22 14:25:03]	[done]
 	build successfully !
 
+[2026-10-22 14:36:15]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\system_hc32f334.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-10-22 14:36:17]	[done]
+	build successfully !
+

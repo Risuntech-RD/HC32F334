@@ -2365,45 +2365,45 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
  .debug_aranges
                 0x00001120       0x70 ./build/Debug/.obj/source/main.o
 
-.debug_str      0x00000000     0x9e60
- .debug_str     0x00000000     0x9e60 ./build/Debug/.obj/GCC/startup_hc32f334.o
+.debug_str      0x00000000     0x9e62
+ .debug_str     0x00000000     0x9e62 ./build/Debug/.obj/GCC/startup_hc32f334.o
                                  0x75 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/PSFB/psfb.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/PSFB/psfb.o
                                0x2e36 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/common/syscalls.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/common/syscalls.o
                                 0x485 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/common/system_hc32f334.o
                                 0x867 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll.o
                                 0x9cb (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
                                 0xc5d (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
                                0x1dcc (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
                                 0xb25 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
                                0x1120 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
                                 0xee0 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
                                 0x48f (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
                                 0xb8a (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
                                0x144e (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
                                 0x1db (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
                                0x2ca3 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
                                 0xba9 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
                                0x1131 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
                                0x10d4 (size before relaxing)
- .debug_str     0x00009e60        0x0 ./build/Debug/.obj/source/main.o
-                               0x2d9a (size before relaxing)
+ .debug_str     0x00009e62        0x0 ./build/Debug/.obj/source/main.o
+                               0x2d9c (size before relaxing)
 
 .debug_rnglists
                 0x00000000      0xd99

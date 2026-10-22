@@ -97,7 +97,7 @@ __NO_INIT uint32_t HRC_VALUE;
  *         1 默认PLL源为XTAL(24MHz)启动, XTAL失败退回HRC
  *         2 启动PLL失败退回HRC(16MHz)
  * XTAL───(Y)───────────>┐
- *     └──(N)──> HRC──> PLL ─(Y)────────────────────>┐
+ *     └──(N)──> HRC──> PLL ───(Y)───────────────────>┐
  *                          └──(N)──> HRC(16MHz)──> SYSCLK ──(/1)──> HCLK
  * 
  */

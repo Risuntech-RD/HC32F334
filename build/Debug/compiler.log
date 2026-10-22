@@ -3,15 +3,16 @@
 Compiler Full Name: arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
 Compiler Version: 15.2.1
 Builder Mode: Incremental
-The amount of C files: 20
+The amount of C files: 2
 The amount of C++ files: 0
-The amount of Asm files: 1
+The amount of Asm files: 0
 
 >>> prebuild
 
 
 
 >>> cc
+
 
 
 
