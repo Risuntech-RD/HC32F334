@@ -1,0 +1,31 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PyOCD Debug (Recommended)",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "${workspaceFolder}/build/Debug/XHCODE.elf",
+            "servertype": "pyocd",
+            "targetId": "hc32f334jati",
+            "gdbPath": "C:/Users/rsta1033/.eide/tools/gcc_arm/bin/arm-none-eabi-gdb.exe",
+            "serverArgs": [
+                "-f", "4M",
+                "--config", "${workspaceFolder}/.eide/debug.pyocd.yaml"
+            ],
+            "overrideGDBServerStartedRegex": "GDB server (started|listening) (at|on) port",
+            // "overrideLaunchCommands": [
+            //     "target-download"
+            // ],
+            // "overrideResetCommands": [
+            //     "interpreter-exec console \"interrupt\"",
+            //     "target-download"
+            // ],
+            "runToEntryPoint": "main",
+            "preLaunchTask": "kill-pyocd",
+            "svdFile": "${workspaceFolder}/.pack/HDSC/HC32F334.1.0.0/SVD/HC32F334JATI.svd",
+            "showDevDebugOutput": "raw"
+        }
+    ]
+}

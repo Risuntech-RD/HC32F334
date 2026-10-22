@@ -1,0 +1,11 @@
+pack:
+  - ./GCC/HDSC.HC32F334.1.0.0.pack
+
+target_override: hc32f334jati
+
+frequency: 4000000
+
+
+connect_mode: under-reset
+
+reset_delay: 0.5

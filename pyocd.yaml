@@ -1,0 +1,10 @@
+pack:
+  - c:/Users/rsta1033/Desktop/HC32F334/F334_LQ64_DAB/DAB_XHCODE/Eclipse/GCC/HDSC.HC32F334.1.0.0.pack
+
+target_override: hc32f334jati
+
+frequency: 4000000
+
+connect_mode: under-reset
+
+reset_delay: 0.5

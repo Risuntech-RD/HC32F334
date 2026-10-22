@@ -1,0 +1,131 @@
+{
+    "name": "XHCODE",
+    "target": "Debug",
+    "toolchain": "GCC",
+    "toolchainLocation": "C:\\Users\\rsta1033\\.eide\\tools\\gcc_arm",
+    "toolchainCfgFile": "c:\\Users\\rsta1033\\.vscode\\extensions\\cl.eide-3.27.2\\res\\data\\models/arm.gcc.model.json",
+    "buildMode": "fast|multhread",
+    "showRepathOnLog": true,
+    "threadNum": 6,
+    "rootDir": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+    "dumpPath": "build\\Debug",
+    "outDir": "build\\Debug",
+    "incDirs": [
+        ".",
+        "CMSIS/Core/Include",
+        "common",
+        "driver/inc",
+        "source",
+        "PSFB"
+    ],
+    "libDirs": [],
+    "defines": [
+        "__DEBUG",
+        "HC32F334",
+        "USE_DDL_DRIVER"
+    ],
+    "sourceList": [
+        "GCC/startup_hc32f334.S",
+        "PSFB/psfb.c",
+        "common/syscalls.c",
+        "common/system_hc32f334.c",
+        "driver/src/hc32_ll.c",
+        "driver/src/hc32_ll_adc.c",
+        "driver/src/hc32_ll_aos.c",
+        "driver/src/hc32_ll_clk.c",
+        "driver/src/hc32_ll_dma.c",
+        "driver/src/hc32_ll_efm.c",
+        "driver/src/hc32_ll_fcg.c",
+        "driver/src/hc32_ll_gpio.c",
+        "driver/src/hc32_ll_hrpwm.c",
+        "driver/src/hc32_ll_icg.c",
+        "driver/src/hc32_ll_interrupts.c",
+        "driver/src/hc32_ll_pwc.c",
+        "driver/src/hc32_ll_sram.c",
+        "driver/src/hc32_ll_tmra.c",
+        "driver/src/hc32_ll_usart.c",
+        "driver/src/hc32_ll_utility.c",
+        "source/main.c"
+    ],
+    "alwaysInBuildSources": [
+        "source/main.c"
+    ],
+    "sourceParams": {},
+    "options": {
+        "version": 5,
+        "afterBuildTasks": [],
+        "asm-compiler": {
+            "ASM_FLAGS": "-D__DEBUG -DHC32F334 -DUSE_DDL_DRIVER"
+        },
+        "beforeBuildTasks": [],
+        "c/cpp-compiler": {
+            "CXX_FLAGS": "",
+            "C_FLAGS": "",
+            "language-c": "gnu99",
+            "language-cpp": "c++11",
+            "one-elf-section-per-data": true,
+            "one-elf-section-per-function": true,
+            "optimization": "level-0",
+            "signed-char": true,
+            "warnings": "all-warnings"
+        },
+        "global": {
+            "$float-abi-type": "hard",
+            "misc-control": [
+                "-fmessage-length=0",
+                "-mthumb-interwork",
+                "-Wall"
+            ],
+            "not-use-syscalls": true,
+            "output-debug-info": "enable",
+            "use-newlib-nano": true,
+            "toolPrefix": "arm-none-eabi-",
+            "arm-thumb-mode": "thumb",
+            "microcontroller-cpu": "cortex-m4-sp",
+            "microcontroller-fpu": "cortex-m4-sp",
+            "microcontroller-float": "cortex-m4-sp",
+            "$arch-extensions": "",
+            "$clang-arch-extensions": "",
+            "$armlink-arch-extensions": ""
+        },
+        "linker": {
+            "$outputTaskExcludes": [
+                ".bin"
+            ],
+            "LD_FLAGS": "",
+            "LIB_FLAGS": "",
+            "output-format": "elf",
+            "remove-unused-input-sections": true,
+            "$toolName": "gcc",
+            "link-scatter": [
+                "c:/Users/rsta1033/Desktop/HC32F334/F334_LQ64_DAB/XHCODE/Eclipse/GCC/HC32F334xA.ld"
+            ]
+        }
+    },
+    "env": {
+        "PATH": "${env:PATH}",
+        "workspaceFolder": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+        "workspaceFolderBasename": "Eclipse",
+        "OutDir": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug",
+        "OutDirRoot": "build",
+        "OutDirBase": "build\\Debug",
+        "ProjectName": "XHCODE",
+        "ConfigName": "Debug",
+        "ProjectRoot": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+        "ExecutableName": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug\\XHCODE",
+        "ChipPackDir": ".pack/HDSC/HC32F334.1.0.0",
+        "ChipName": "HC32F334JATI",
+        "SYS_Platform": "win32",
+        "SYS_DirSep": "\\",
+        "SYS_DirSeparator": "\\",
+        "SYS_PathSep": ";",
+        "SYS_PathSeparator": ";",
+        "SYS_EOL": "\r\n",
+        "EIDE_BUILDER_DIR": "c:\\Users\\rsta1033\\.vscode\\extensions\\cl.eide-3.27.2\\res\\tools\\win32\\unify_builder",
+        "EIDE_BINARIES_VER": "12.1.1",
+        "EIDE_MSYS": "C:\\Users\\rsta1033\\.eide\\bin\\builder\\msys\\bin",
+        "EIDE_PY3_CMD": "C:\\Users\\rsta1033\\.eide\\bin\\python36\\python3.exe",
+        "ToolchainRoot": "C:\\Users\\rsta1033\\.eide\\tools\\gcc_arm"
+    },
+    "sysPaths": []
+}

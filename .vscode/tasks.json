@@ -1,0 +1,78 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "${command:eide.project.build}",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "flash",
+            "type": "shell",
+            "command": "${command:eide.project.uploadToDevice}",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "build and flash",
+            "type": "shell",
+            "command": "${command:eide.project.BuildAndFlash}",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "pyocd gdbserver",
+            "type": "shell",
+            "command": "pyocd gdbserver --port 3333 --telnet-port 3334 --target hc32f334jati --frequency 4M --config ${workspaceFolder}/.eide/debug.pyocd.yaml",
+            "isBackground": true,
+            "problemMatcher": {
+                "base": "$tsc-watch",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": "GDB server listening on port"
+                }
+            }
+        },
+        {
+            "label": "pyocd gdbserver (verbose)",
+            "type": "shell",
+            "command": "pyocd gdbserver --target hc32f334jati -v",
+            "problemMatcher": []
+        },
+        {
+            "label": "pyocd gdbserver (1M)",
+            "type": "shell",
+            "command": "pyocd gdbserver --port 3333 --telnet-port 3334 --target hc32f334jati --config ${workspaceFolder}/.eide/debug.pyocd.yaml -f 1M",
+            "problemMatcher": []
+        },
+        {
+            "label": "pyocd gdbserver (4M)",
+            "type": "shell",
+            "command": "pyocd gdbserver --port 3333 --telnet-port 3334 --target hc32f334jati --config ${workspaceFolder}/.eide/debug.pyocd.yaml -f 4M",
+            "problemMatcher": []
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "${command:eide.project.rebuild}",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "${command:eide.project.clean}",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "kill-pyocd",
+            "type": "shell",
+            "command": "Get-Process -Name pyocd -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue; exit 0",
+            "problemMatcher": []
+        }
+    ]
+}

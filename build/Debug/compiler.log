@@ -1,0 +1,30 @@
+>>> info
+
+Compiler Full Name: arm-none-eabi-gcc.exe (Arm GNU Toolchain 15.2.Rel1 (Build arm-15.86)) 15.2.1 20251203
+Compiler Version: 15.2.1
+Builder Mode: Incremental
+The amount of C files: 20
+The amount of C++ files: 0
+The amount of Asm files: 1
+
+>>> prebuild
+
+
+
+>>> cc
+
+
+
+>>> ld
+
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./build/Debug/XHCODE.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       31600 B       128 KB     24.11%
+        OTP_DATA:          64 B         1 KB      6.25%
+        OTP_LOCK:          68 B         68 B    100.00%
+             RAM:         568 B        32 KB      1.73%
+            RAMB:           0 B         4 KB      0.00%
+
+
+>>> postbuild
+
