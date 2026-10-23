@@ -21,53 +21,25 @@
  *   -> DMA硬件请求 -> DMA写入 isenseDmaBuf[](循环回绕)
  ******************************************************************************/
 
-#include "hc32_ll.h"
+#include "psfb.h"
 
-/*=========================== 可配置参数 ===========================*/
-#define PSFB_HRPWM_CLK_HZ   (120000000UL)
-#define PSFB_PWM_FREQ_HZ    (20000UL)
-#define PSFB_DEAD_TIME_NS   (500UL)
-#define PSFB_INIT_PHASE_CNT (250U << 6)
-
-/*--------------------------- 计算值 ---------------------------*/
-/* HRPWM 高精度寄存器格式: 1 PCLK0 周期 = 64 计数 (<<6), 低6位为小数 */
-#define PSFB_PERIOD      (uint32_t)((PSFB_HRPWM_CLK_HZ / (2UL * PSFB_PWM_FREQ_HZ)) << 6)
-#define PSFB_DT_CNT      (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)
-#define PSFB_HALF_PERIOD (uint32_t)(PSFB_PERIOD / 2U)
-
-/*--------------------- HRPWM 模块定义 ---------------------*/
-#define HRPWM_MASTER (CM_HRPWM2)
-#define HRPWM_SLAVE  (CM_HRPWM3)
-
-/*----- 电流采样配置 (R18=0.5Ω, U6.1 LM358 同相放大 Gain=2) -----*/
-#define ISENSE_ADC_PORT      (GPIO_PORT_A)
-#define ISENSE_ADC_PIN       (GPIO_PIN_01)
-#define ISENSE_ADC_UNIT      (CM_ADC1)
-#define ISENSE_ADC_CH        (ADC_CH1)
-#define ISENSE_SHUNT_OHM     (0.5f)
-#define ISENSE_AMP_GAIN      (2.0f)
-#define ISENSE_ADC_VREF_V    (3.3f)
-#define ISENSE_ADC_MAXCODE   (4095U)
-#define ISENSE_OVERCURRENT_A (3.0f)
-#define ISENSE_FILTER_WINDOW (8U)
-#define ISENSE_ADC_TO_CURRENT(adc) ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-
-/*----- DMA 配置: ADC1 -> 内存循环缓冲区 -----*/
-#define ISENSE_DMA_UNIT      (CM_DMA)
-#define ISENSE_DMA_CH        (DMA_CH0)
-#define ISENSE_DMA_BUF_DEPTH (16U)
 
 /*=========================== 全局变量 ===========================*/
 static uint32_t     phaseCnt    = PSFB_INIT_PHASE_CNT;
 
-static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};
-static uint8_t      isenseIdx    = 0;
-static float        isenseLatestA = 0.0f;
+static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};      // 采样数据滤波缓冲区
+static uint8_t      isenseIdx       = 0;                        // 采样数据索引
+static float        isenseLatestA   = 0.0f;                     // 最新采样数据
 
-volatile uint16_t   isenseDmaBuf[ISENSE_DMA_BUF_DEPTH] = {0};
+volatile uint16_t   isenseDmaBuf[ISENSE_DMA_BUF_DEPTH] = {0};   // DMA搬运缓冲区
+
 
 /*=========================== PWM 部分 ===========================*/
-
+/**
+ * @brief  初始化 GPIO 引脚
+ * @param  None
+ * @retval None
+ */
 static void PSFB_GPIO_Init(void)
 {
     stc_gpio_init_t stcGpio;
@@ -90,6 +62,12 @@ static void PSFB_GPIO_Init(void)
     GPIO_SetFunc(GPIO_PORT_A, GPIO_PIN_11, GPIO_HRPWM3_PWMB);
 }
 
+
+/**
+ * @brief  初始化 HRPWM2 主单元
+ * @param  None
+ * @retval None
+ */
 static void PSFB_HRPWM2_Init(void)
 {
     stc_hrpwm_init_t                    stcHrpwm;
@@ -141,6 +119,11 @@ static void PSFB_HRPWM2_Init(void)
     HRPWM_PWM_ChBOutputEnable(HRPWM_MASTER);
 }
 
+/**
+ * @brief  初始化 HRPWM3 从单元
+ * @param  None
+ * @retval None
+ */
 static void PSFB_HRPWM3_Init(void)
 {
     stc_hrpwm_init_t                    stcHrpwm;
@@ -195,25 +178,41 @@ static void PSFB_HRPWM3_Init(void)
     HRPWM_PWM_ChBOutputEnable(HRPWM_SLAVE);
 }
 
-
+/**
+ * @brief  设置移相全桥(PSFB)相位
+ * @param  u32PhaseCnt: 相位值, 范围 [PSFB_PHASE_MIN, PSFB_PHASE_MAX]
+ * @retval None
+ */
 void PSFB_SetPhase(uint32_t u32PhaseCnt)
 {
-    if (u32PhaseCnt > PSFB_PERIOD)
-    {
-        u32PhaseCnt = PSFB_PERIOD;
-    }
+    if (u32PhaseCnt < PSFB_PHASE_MIN)
+        u32PhaseCnt = PSFB_PHASE_MIN;
+    if (u32PhaseCnt > PSFB_PHASE_MAX)
+        u32PhaseCnt = PSFB_PHASE_MAX;
     phaseCnt = u32PhaseCnt;
     HRPWM_PH_SetCompareValue(HRPWM_PH_MATCH_IDX1, u32PhaseCnt);
 }
 
+/**
+ * @brief  获取当前相位
+ * @param  None
+ * @retval 当前相位值, 范围 [PSFB_PHASE_MIN, PSFB_PHASE_MAX]
+ */
 uint32_t PSFB_GetPhase(void)
 {
     return phaseCnt;
 }
 
-void PSFB_Start(void)
+
+/**
+ * @brief  启动移相全桥(PSFB)驱动
+ * @note   从 PSFB_PHASE_MAX(170°, 零功率) 逐步递减到 phaseCnt, 每步延时使功率缓慢爬升
+ * @param  None
+ * @retval None
+ */
+void PSFB_Start(psfb_state_t state)
 {
-    PSFB_SetPhase(PSFB_PERIOD);
+    PSFB_SetPhase(PSFB_PHASE_MAX);
 
     /* 退出空闲状态, 使能 PWM 输出通道 */
     HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
@@ -221,21 +220,33 @@ void PSFB_Start(void)
     HRPWM_CountStart(HRPWM_SLAVE);
     HRPWM_CountStart(HRPWM_MASTER);
 
+    /* 软启动: 从 PSFB_PHASE_MAX(170°, 零功率) 逐步递减到 phaseCnt, 每步延时使功率缓慢爬升 */
+    if (state == PSFB_SOFTSTART_ON)
     {
         uint32_t i;
-        uint32_t step = (PSFB_PERIOD - phaseCnt) / 20U;
+        uint32_t step = (PSFB_PHASE_MAX - phaseCnt) / PSFB_SOFTSTART_STEPS;
         if (step == 0U)
         {
             step = 1U;
         }
-        for (i = PSFB_PERIOD; i > phaseCnt; i -= step)
+        for (i = PSFB_PHASE_MAX; i > phaseCnt; i -= step)
         {
             PSFB_SetPhase(i);
+            DDL_DelayMS(PSFB_SOFTSTART_DELAY_MS);
         }
+        PSFB_SetPhase(phaseCnt);
+    }
+    else
+    {
         PSFB_SetPhase(phaseCnt);
     }
 }
 
+/**
+ * @brief  停止移相全桥(PSFB)驱动
+ * @param  None
+ * @retval None
+ */
 void PSFB_Stop(void)
 {
     HRPWM_CountStop(HRPWM_MASTER);
@@ -244,10 +255,17 @@ void PSFB_Stop(void)
     HRPWM_PWM_ChBOutputDisable(HRPWM_MASTER);
     HRPWM_PWM_ChAOutputDisable(HRPWM_SLAVE);
     HRPWM_PWM_ChBOutputDisable(HRPWM_SLAVE);
+
+    HRPWM_PH_Disable(HRPWM_SLAVE);    /* 禁用 PH 移相模块 */
+    PSFB_SetPhase(PSFB_PHASE_MAX);    /* 相位配置为 PSFB_PHASE_MAX(170°, 零功率) */
 }
 
 /*======================= 电流采样 (ADC+DMA) =======================*/
-
+/**
+ * @brief  初始化电流采样 GPIO
+ * @param  None
+ * @retval None
+ */
 static void ISENSE_GPIO_Init(void)
 {
     stc_gpio_init_t stcGpio;
@@ -257,6 +275,11 @@ static void ISENSE_GPIO_Init(void)
     GPIO_Init(ISENSE_ADC_PORT, ISENSE_ADC_PIN, &stcGpio);
 }
 
+/**
+ * @brief  初始化电流采样 ADC
+ * @param  None
+ * @retval None
+ */
 static void ISENSE_ADC_Init(void)
 {
     stc_adc_init_t stcAdcInit;
@@ -281,6 +304,11 @@ static void ISENSE_ADC_Init(void)
     ADC_Start(ISENSE_ADC_UNIT);
 }
 
+/**
+ * @brief  初始化电流采样 DMA
+ * @param  None
+ * @retval None
+ */
 static void ISENSE_DMA_Init(void)
 {
     stc_dma_init_t stcDmaInit;
@@ -307,6 +335,11 @@ static void ISENSE_DMA_Init(void)
     DMA_ChCmd(ISENSE_DMA_UNIT, ISENSE_DMA_CH, ENABLE);
 }
 
+/**
+ * @brief  从 DMA 缓冲区读取原始电流采样值
+ * @param  None
+ * @retval 16位原始电流采样值
+ */
 static uint16_t ISENSE_ReadRaw(void)
 {
     uint32_t u32Remain;
@@ -325,6 +358,11 @@ static uint16_t ISENSE_ReadRaw(void)
     return isenseDmaBuf[u16Idx];
 }
 
+/**
+ * @brief  电流采样
+ * @param  None
+ * @retval 16位电流采样值
+ */
 float ISENSE_Sample(void)
 {
     uint16_t u16Raw;
@@ -348,11 +386,21 @@ float ISENSE_Sample(void)
     return isenseLatestA;
 }
 
+/**
+ * @brief  获取当前采样值
+ * @param  None
+ * @retval 16位电流采样值
+ */
 float ISENSE_GetCurrent(void)
 {
     return isenseLatestA;
 }
 
+/**
+ * @brief  检查是否超过最大电流
+ * @param  None
+ * @retval 1: 超过最大电流, 0: 未超过最大电流
+ */
 uint8_t ISENSE_CheckOverCurrent(void)
 {
     if (isenseLatestA >= ISENSE_OVERCURRENT_A)
@@ -363,6 +411,11 @@ uint8_t ISENSE_CheckOverCurrent(void)
     return 0U;
 }
 
+/**
+ * @brief  初始化电流采样
+ * @param  None
+ * @retval None
+ */
 void ISENSE_Init(void)
 {
     ISENSE_GPIO_Init();
@@ -390,3 +443,9 @@ void PSFB_BSP_Init(void)
     PSFB_HRPWM3_Init();
     ISENSE_Init();
 }
+
+
+
+/******* end of file*/
+
+

@@ -3,8 +3,15 @@ pack:
 
 target_override: hc32f334jati
 
-frequency: 4000000
+frequency: 20000000
+chip_erase: chip
+smart_flash: true
+keep_unwritten: false
+load.pre_reset: true
+load.post_reset: true
+resume_on_disconnect: true
+
 
 connect_mode: under-reset
 
-reset_delay: 0.5
+reset_delay: 0.2

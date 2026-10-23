@@ -2,6 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "cwd": "${workspaceRoot}",
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug: JLINK",
+            "servertype": "jlink",
+            "interface": "swd",
+            "executable": "build/Debug/XHCODE.elf",
+            "runToEntryPoint": "main",
+            "device": "HC32F334xA",
+            "toolchainPrefix": "arm-none-eabi",
+            "svdFile": ".pack/HDSC/HC32F334.1.0.0/SVD/HC32F334JATI.svd"
+        },
+        {
             "name": "PyOCD Debug (Recommended)",
             "type": "cortex-debug",
             "request": "launch",

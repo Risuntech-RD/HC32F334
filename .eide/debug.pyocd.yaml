@@ -3,9 +3,9 @@ pack:
 
 target_override: hc32f334jati
 
-frequency: 4000000
+frequency: 8000000
 
 
 connect_mode: under-reset
 
-reset_delay: 0.5
+reset_delay: 0.1

@@ -12,9 +12,10 @@
 #define __MAIN_H__
 
 #include <stdio.h>
-#include "psfb.h"
 #include "hc32_ll.h"
+#include "psfb.h"
 
+/** 全局函数声明 */
 static void     App_PortCfg(void);
 static void     Log_SendString(const char *pcStr);
 static void     Delay_ms(volatile uint32_t u32Ms);

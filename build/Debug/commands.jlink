@@ -1,0 +1,6 @@
+r
+halt
+loadfile "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\build\Debug\XHCODE.hex"
+r
+go
+exit

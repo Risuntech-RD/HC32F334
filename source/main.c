@@ -35,7 +35,7 @@ static volatile stc_time_t  m_stcTime = {0U, 0U, 0U, 0U, 0U, 0U, 0U};
 int main(void)
 {
     static uint8_t  u8LastSec = 0xFFU;
-    char            UartStr[64];
+    char            UartStr[64]={"\0"};
 
     /* 初始化系统时钟和外设 */
     LL_PERIPH_WE(LL_PERIPH_ALL);

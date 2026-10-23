@@ -87,11 +87,11 @@ targets:
         baseAddr: ""
         bin: ""
         cpuInfo:
-          cpuName: HC32F334JATI
+          cpuName: HC32F334xA
           vendor: HDSC
-        otherCmds: ""
+        otherCmds: -NoGui 1 -ExitOnError 1
         proType: 1
-        speed: 8000
+        speed: 20000
       OpenOCD:
         baseAddr: "0x00000000"
         bin: ""
@@ -112,9 +112,9 @@ targets:
         bin: ""
         config: .eide/debug.pyocd.yaml
         otherCmds: ""
-        speed: 4M
+        speed: 20M
         targetName: hc32f334jati
-    uploader: pyOCD
+    uploader: JLink
   Release:
     cppPreprocessAttrs:
       defineList: []

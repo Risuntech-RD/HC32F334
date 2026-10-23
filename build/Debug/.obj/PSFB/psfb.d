@@ -1,9 +1,9 @@
-build/Debug/.obj/PSFB/psfb.o: PSFB/psfb.c driver/inc/hc32_ll.h \
- driver/inc/hc32_ll_def.h common/hc32f3xx.h common/hc32f334.h \
- CMSIS/Core/Include/core_cm4.h CMSIS/Core/Include/cmsis_version.h \
- CMSIS/Core/Include/cmsis_compiler.h CMSIS/Core/Include/cmsis_gcc.h \
- CMSIS/Core/Include/mpu_armv7.h common/system_hc32f334.h \
- driver/inc/hc32_ll_def.h common/hc32f3xx.h source/hc32f3xx_conf.h \
+build/Debug/.obj/PSFB/psfb.o: PSFB/psfb.c PSFB/psfb.h \
+ driver/inc/hc32_ll_def.h driver/inc/hc32_ll.h driver/inc/hc32_ll_def.h \
+ common/hc32f3xx.h common/hc32f334.h CMSIS/Core/Include/core_cm4.h \
+ CMSIS/Core/Include/cmsis_version.h CMSIS/Core/Include/cmsis_compiler.h \
+ CMSIS/Core/Include/cmsis_gcc.h CMSIS/Core/Include/mpu_armv7.h \
+ common/system_hc32f334.h common/hc32f3xx.h source/hc32f3xx_conf.h \
  driver/inc/hc32_ll_adc.h driver/inc/hc32_ll_aos.h \
  driver/inc/hc32_ll_clk.h driver/inc/hc32_ll_dma.h \
  driver/inc/hc32_ll_efm.h driver/inc/hc32_ll_fcg.h \
