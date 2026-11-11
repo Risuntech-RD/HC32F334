@@ -1,434 +1,373 @@
-[2026-10-22 14:24:56]	[info] incremental build: 21 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\GCC\startup_hc32f334.S': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\syscalls.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\system_hc32f334.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_adc.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_aos.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_clk.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_dma.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_efm.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_fcg.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_gpio.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_hrpwm.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_icg.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_interrupts.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_pwc.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_sram.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_tmra.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_usart.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_utility.c': object (.o) file not exist
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': object (.o) file not exist
-
-[2026-10-22 14:25:03]	[done]
+[2026-11-04 15:24:21]	[done]
 	build successfully !
 
-[2026-10-22 14:36:15]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\system_hc32f334.c': source file has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-22 14:36:17]	[done]
-	build successfully !
-
-[2026-10-22 17:16:16]	[info] incremental build: 2 source files changed
+[2026-11-04 15:31:34]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-22 17:16:19]	[done]
+[2026-11-04 15:31:37]	[done]
 	build successfully !
 
-[2026-10-22 17:27:22]	[info] incremental build: 2 source files changed
+[2026-11-04 15:31:52]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:31:54]	[done]
+	build successfully !
+
+[2026-11-04 15:36:00]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-22 17:27:24]	[done]
+[2026-11-04 15:36:02]	[done]
 	build successfully !
 
-[2026-10-23 10:37:00]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:37:02]	[done]
-	build successfully !
-
-[2026-10-23 10:43:00]	[info] incremental build: 2 source files changed
+[2026-11-04 15:36:52]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:43:02]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+[2026-11-04 15:36:54]	[done]
+	build successfully !
+
+[2026-11-04 15:37:57]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:37:59]	[done]
+	build successfully !
+
+[2026-11-04 15:38:22]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:38:24]	[done]
+	build successfully !
+
+[2026-11-04 15:39:17]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:39:19]	[done]
+	build successfully !
+
+[2026-11-04 15:39:35]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:39:37]	[done]
+	build successfully !
+
+[2026-11-04 15:41:02]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:41:04]	[done]
+	build successfully !
+
+[2026-11-04 15:43:03]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:43:05]	[done]
+	build successfully !
+
+[2026-11-04 15:43:30]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:43:32]	[done]
+	build successfully !
+
+[2026-11-04 15:44:49]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 15:44:51]	[done]
+	build successfully !
+
+[2026-11-04 16:32:15]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:32:16]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
 command: 
   "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
    at unify_builder.Program.Main(String[] args_)
 ---
-./PSFB/psfb.c:28:35: error: 'PSFB_INIT_PHASE_CNT' undeclared here (not in a function)
-   28 | static uint32_t     phaseCnt    = PSFB_INIT_PHASE_CNT;
-      |                                   ^~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.c:30:31: error: 'ISENSE_FILTER_WINDOW' undeclared here (not in a function)
-   30 | static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};
-      |                               ^~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.c:34:34: error: 'ISENSE_DMA_BUF_DEPTH' undeclared here (not in a function)
-   34 | volatile uint16_t   isenseDmaBuf[ISENSE_DMA_BUF_DEPTH] = {0};
-      |                                  ^~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'PSFB_HRPWM2_Init':
-./PSFB/psfb.c:82:39: error: 'PSFB_PERIOD' undeclared (first use in this function)
-   82 |     stcHrpwm.u32PeriodValue         = PSFB_PERIOD;
-      |                                       ^~~~~~~~~~~
-./PSFB/psfb.c:82:39: note: each undeclared identifier is reported only once for each function it appears in
-./PSFB/psfb.c:84:16: error: 'HRPWM_MASTER' undeclared (first use in this function)
-   84 |     HRPWM_Init(HRPWM_MASTER, &stcHrpwm);
-      |                ^~~~~~~~~~~~
-./PSFB/psfb.c:88:39: error: 'PSFB_HALF_PERIOD' undeclared (first use in this function)
-   88 |     stcPwmA.u32CompareValue         = PSFB_HALF_PERIOD;
-      |                                       ^~~~~~~~~~~~~~~~
-./PSFB/psfb.c:106:44: error: 'PSFB_DT_CNT' undeclared (first use in this function)
-  106 |     HRPWM_SetDeadTimeUpValue(HRPWM_MASTER, PSFB_DT_CNT);        // 死区时间, 500nS
-      |                                            ^~~~~~~~~~~
-./PSFB/psfb.c: In function 'PSFB_HRPWM3_Init':
-./PSFB/psfb.c:139:39: error: 'PSFB_PERIOD' undeclared (first use in this function)
-  139 |     stcHrpwm.u32PeriodValue         = PSFB_PERIOD;
-      |                                       ^~~~~~~~~~~
-./PSFB/psfb.c:141:16: error: 'HRPWM_SLAVE' undeclared (first use in this function)
-  141 |     HRPWM_Init(HRPWM_SLAVE, &stcHrpwm);
-      |                ^~~~~~~~~~~
-./PSFB/psfb.c:145:39: error: 'PSFB_HALF_PERIOD' undeclared (first use in this function)
-  145 |     stcPwmA.u32CompareValue         = PSFB_HALF_PERIOD;
-      |                                       ^~~~~~~~~~~~~~~~
-./PSFB/psfb.c:163:43: error: 'PSFB_DT_CNT' undeclared (first use in this function)
-  163 |     HRPWM_SetDeadTimeUpValue(HRPWM_SLAVE, PSFB_DT_CNT);
-      |                                           ^~~~~~~~~~~
-./PSFB/psfb.c: In function 'PSFB_SetPhase':
-./PSFB/psfb.c:187:23: error: 'PSFB_PHASE_MIN' undeclared (first use in this function)
-  187 |     if (u32PhaseCnt < PSFB_PHASE_MIN)
-      |                       ^~~~~~~~~~~~~~
-./PSFB/psfb.c:191:23: error: 'PSFB_PHASE_MAX' undeclared (first use in this function)
-  191 |     if (u32PhaseCnt > PSFB_PHASE_MAX)
-      |                       ^~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'PSFB_Start':
-./PSFB/psfb.c:220:19: error: 'PSFB_PHASE_MAX' undeclared (first use in this function)
-  220 |     PSFB_SetPhase(PSFB_PHASE_MAX);
-      |                   ^~~~~~~~~~~~~~
-./PSFB/psfb.c:225:22: error: 'HRPWM_SLAVE' undeclared (first use in this function)
-  225 |     HRPWM_CountStart(HRPWM_SLAVE);
-      |                      ^~~~~~~~~~~
-./PSFB/psfb.c:226:22: error: 'HRPWM_MASTER' undeclared (first use in this function)
-  226 |     HRPWM_CountStart(HRPWM_MASTER);
-      |                      ^~~~~~~~~~~~
-./PSFB/psfb.c: In function 'PSFB_Stop':
-./PSFB/psfb.c:252:21: error: 'HRPWM_MASTER' undeclared (first use in this function)
-  252 |     HRPWM_CountStop(HRPWM_MASTER);
-      |                     ^~~~~~~~~~~~
-./PSFB/psfb.c:253:21: error: 'HRPWM_SLAVE' undeclared (first use in this function)
-  253 |     HRPWM_CountStop(HRPWM_SLAVE);
-      |                     ^~~~~~~~~~~
-./PSFB/psfb.c:260:19: error: 'PSFB_PHASE_MAX' undeclared (first use in this function)
-  260 |     PSFB_SetPhase(PSFB_PHASE_MAX);    /* 相位配置�?PSFB_PHASE_MAX(170°, 零功�? */
-      |                   ^~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'ISENSE_GPIO_Init':
-./PSFB/psfb.c:275:15: error: 'ISENSE_ADC_PORT' undeclared (first use in this function)
-  275 |     GPIO_Init(ISENSE_ADC_PORT, ISENSE_ADC_PIN, &stcGpio);
-      |               ^~~~~~~~~~~~~~~
-./PSFB/psfb.c:275:32: error: 'ISENSE_ADC_PIN' undeclared (first use in this function)
-  275 |     GPIO_Init(ISENSE_ADC_PORT, ISENSE_ADC_PIN, &stcGpio);
-      |                                ^~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'ISENSE_ADC_Init':
-./PSFB/psfb.c:294:14: error: 'ISENSE_ADC_UNIT' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
-  294 |     ADC_Init(ISENSE_ADC_UNIT, &stcAdcInit);
-      |              ^~~~~~~~~~~~~~~
-      |              ISENSE_ADC_Init
-./PSFB/psfb.c:296:43: error: 'ISENSE_ADC_CH' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
-  296 |     ADC_ChCmd(ISENSE_ADC_UNIT, ADC_SEQ_A, ISENSE_ADC_CH, ENABLE);
-      |                                           ^~~~~~~~~~~~~
-      |                                           ISENSE_ADC_Init
-./PSFB/psfb.c: In function 'ISENSE_DMA_Init':
-./PSFB/psfb.c:321:46: error: 'ISENSE_ADC_UNIT' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
-  321 |     stcDmaInit.u32SrcAddr       = (uint32_t)&ISENSE_ADC_UNIT->DR0;
-      |                                              ^~~~~~~~~~~~~~~
-      |                                              ISENSE_ADC_Init
-./PSFB/psfb.c:328:14: error: 'ISENSE_DMA_UNIT' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
-  328 |     DMA_Init(ISENSE_DMA_UNIT, ISENSE_DMA_CH, &stcDmaInit);
-      |              ^~~~~~~~~~~~~~~
-      |              ISENSE_DMA_Init
-./PSFB/psfb.c:328:31: error: 'ISENSE_DMA_CH' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
-  328 |     DMA_Init(ISENSE_DMA_UNIT, ISENSE_DMA_CH, &stcDmaInit);
-      |                               ^~~~~~~~~~~~~
-      |                               ISENSE_DMA_Init
-./PSFB/psfb.c: In function 'ISENSE_ReadRaw':
-./PSFB/psfb.c:348:35: error: 'ISENSE_DMA_UNIT' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
-  348 |     u32Remain = DMA_GetTransCount(ISENSE_DMA_UNIT, ISENSE_DMA_CH);
-      |                                   ^~~~~~~~~~~~~~~
-      |                                   ISENSE_DMA_Init
-./PSFB/psfb.c:348:52: error: 'ISENSE_DMA_CH' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
-  348 |     u32Remain = DMA_GetTransCount(ISENSE_DMA_UNIT, ISENSE_DMA_CH);
-      |                                                    ^~~~~~~~~~~~~
-      |                                                    ISENSE_DMA_Init
-./PSFB/psfb.c: In function 'ISENSE_Sample':
-./PSFB/psfb.c:385:21: error: implicit declaration of function 'ISENSE_ADC_TO_CURRENT' [-Wimplicit-function-declaration]
-  385 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'ISENSE_CheckOverCurrent':
-./PSFB/psfb.c:406:26: error: 'ISENSE_OVERCURRENT_A' undeclared (first use in this function)
-  406 |     if (isenseLatestA >= ISENSE_OVERCURRENT_A)
-      |                          ^~~~~~~~~~~~~~~~~~~~
 ./PSFB/psfb.c: In function 'PSFB_BSP_Init':
-./PSFB/psfb.c:435:18: error: 'HRPWM_MASTER' undeclared (first use in this function)
-  435 |     HRPWM_DeInit(HRPWM_MASTER);
-      |                  ^~~~~~~~~~~~
-./PSFB/psfb.c:436:18: error: 'HRPWM_SLAVE' undeclared (first use in this function)
-  436 |     HRPWM_DeInit(HRPWM_SLAVE);
-      |                  ^~~~~~~~~~~
-./PSFB/psfb.c: At top level:
-./PSFB/psfb.c:30:21: warning: 'isenseBuf' defined but not used [-Wunused-variable]
-   30 | static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};
-      |                     ^~~~~~~~~
+./PSFB/psfb.c:332:27: error: invalid operands to binary | (have 'CM_HRPWM_TypeDef *' and 'CM_HRPWM_TypeDef *')
+  332 |     PWM_Config(HRPWM_SLAVE|HRPWM_MASTER,  PSFB_PERIOD, PSFB_PERIOD / 2);
+      |                           ^
 
-[2026-10-23 10:43:16]	[info] incremental build: 2 source files changed
+[2026-11-04 16:32:45]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:43:17]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+[2026-11-04 16:32:47]	[done]
+	build successfully !
+
+[2026-11-04 16:38:57]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:38:57]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
 command: 
   "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
    at unify_builder.Program.Main(String[] args_)
 ---
-In file included from ./PSFB/psfb.c:25:
-./PSFB/psfb.h:68:9: warning: 'PSFB_INIT_PHASE_CNT' redefined
-   68 | #define PSFB_INIT_PHASE_CNT     (uint32_t)(250U << 6)   /* 250 PCLK0 周期的相位偏�?*/
-      |         ^~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.h:33:9: note: this is the location of the previous definition
-   33 | #define PSFB_INIT_PHASE_CNT (250U << 6)
-      |         ^~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.c: In function 'ISENSE_Sample':
-./PSFB/psfb.h:83:34: error: 'adc' undeclared (first use in this function)
-   83 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.h:83:34: note: each undeclared identifier is reported only once for each function it appears in
-   83 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
+./PSFB/psfb.c: In function 'DeadTime_Config':
+./PSFB/psfb.c:377:44: error: 'HRPWM_DEADTIME_VALUE' undeclared (first use in this function); did you mean 'HRPWM_DEADTIME_EQUAL_ON'?
+  377 |     HRPWM_SetDeadTimeUpValue(HRPWM_MASTER, HRPWM_DEADTIME_VALUE);
+      |                                            ^~~~~~~~~~~~~~~~~~~~
+      |                                            HRPWM_DEADTIME_EQUAL_ON
+./PSFB/psfb.c:377:44: note: each undeclared identifier is reported only once for each function it appears in
 
-[2026-10-23 10:44:16]	[info] incremental build: 2 source files changed
+[2026-11-04 16:39:44]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:44:17]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+[2026-11-04 16:39:46]	[done]
+	build successfully !
+
+[2026-11-04 16:41:43]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:41:45]	[done]
+	build successfully !
+
+[2026-11-04 16:42:50]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:42:52]	[done]
+	build successfully !
+
+[2026-11-04 16:44:35]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:44:37]	[done]
+	build successfully !
+
+[2026-11-04 16:45:00]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:45:02]	[done]
+	build successfully !
+
+[2026-11-04 16:45:29]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:45:31]	[done]
+	build successfully !
+
+[2026-11-04 16:47:29]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:47:30]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
 command: 
   "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
    at unify_builder.Program.Main(String[] args_)
 ---
-In file included from ./PSFB/psfb.c:25:
-./PSFB/psfb.c: In function 'ISENSE_Sample':
-./PSFB/psfb.h:85:34: error: 'adc' undeclared (first use in this function)
-   85 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.h:85:34: note: each undeclared identifier is reported only once for each function it appears in
-   85 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
+./PSFB/psfb.c: In function 'DeadTime_Config':
+./PSFB/psfb.c:376:44: error: 'HRPWM_DEADTIME_VALUE' undeclared (first use in this function); did you mean 'HRPWM_DEADTIME_EQUAL_ON'?
+  376 |     HRPWM_SetDeadTimeUpValue(HRPWM_MASTER, HRPWM_DEADTIME_VALUE);
+      |                                            ^~~~~~~~~~~~~~~~~~~~
+      |                                            HRPWM_DEADTIME_EQUAL_ON
+./PSFB/psfb.c:376:44: note: each undeclared identifier is reported only once for each function it appears in
 
-[2026-10-23 10:44:53]	[info] incremental build: 2 source files changed
+[2026-11-04 16:47:49]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:44:54]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+[2026-11-04 16:47:51]	[done]
+	build successfully !
+
+[2026-11-04 16:50:42]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 16:50:44]	[done]
+	build successfully !
+
+[2026-11-04 17:04:44]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:04:46]	[done]
+	build successfully !
+
+[2026-11-04 17:05:10]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:05:12]	[done]
+	build successfully !
+
+[2026-11-04 17:06:05]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:06:06]	[done]
+	build successfully !
+
+[2026-11-04 17:07:21]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:07:23]	[done]
+	build successfully !
+
+[2026-11-04 17:08:14]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:08:16]	[done]
+	build successfully !
+
+[2026-11-04 17:09:54]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:09:57]	[done]
+	build successfully !
+
+[2026-11-04 17:10:18]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:10:20]	[done]
+	build successfully !
+
+[2026-11-04 17:26:37]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-04 17:26:37]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
 command: 
   "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
    at unify_builder.Program.Main(String[] args_)
 ---
-In file included from ./PSFB/psfb.c:25:
-./PSFB/psfb.h:93:1: warning: multi-line comment [-Wcomment]
-   93 | // #define ISENSE_CODE_TO_CURRENT(code) \
-      | ^
-./PSFB/psfb.c: In function 'ISENSE_Sample':
-./PSFB/psfb.h:85:34: error: 'adc' undeclared (first use in this function)
-   85 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
-./PSFB/psfb.h:85:34: note: each undeclared identifier is reported only once for each function it appears in
-   85 | #define ISENSE_ADC_TO_CURRENT   (adc)   ((float)(adc) * ISENSE_ADC_VREF_V / ISENSE_ADC_MAXCODE / (ISENSE_AMP_GAIN * ISENSE_SHUNT_OHM))
-      |                                  ^~~
-./PSFB/psfb.c:386:21: note: in expansion of macro 'ISENSE_ADC_TO_CURRENT'
-  386 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
-      |                     ^~~~~~~~~~~~~~~~~~~~~
-
-[2026-10-23 10:45:36]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:45:39]	[done]
-	build successfully !
-
-[2026-10-23 10:46:25]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:46:27]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c", exit code: 1
-command: 
-  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/source/main.o -MMD ./source/main.c
-   at unify_builder.Program.Main(String[] args_)
----
-./source/main.c: In function 'main':
-./source/main.c:50:5: error: implicit declaration of function 'PSFB_BSP_Init' [-Wimplicit-function-declaration]
-   50 |     PSFB_BSP_Init();                // 初始化PSFB_HC
-      |     ^~~~~~~~~~~~~
-
-[2026-10-23 10:46:46]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:46:47]	[done]
-	build successfully !
-
-[2026-10-23 10:47:05]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': dependence 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.h' has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:47:08]	[done]
-	build successfully !
-
-[2026-10-23 10:47:35]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': dependence 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.h' has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:47:38]	[done]
-	build successfully !
-
-[2026-10-23 10:48:11]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:48:13]	[done]
-	build successfully !
-
-[2026-10-23 10:54:05]	[info] incremental build: 2 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 10:54:06]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
-command: 
-  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
-   at unify_builder.Program.Main(String[] args_)
----
-./PSFB/psfb.c:215:6: error: conflicting types for 'PSFB_Start'; have 'void(psfb_state_t)'
-  215 | void PSFB_Start(psfb_state_t state)
+./PSFB/psfb.c:397:6: error: conflicting types for 'PWM_Config'; have 'void(uint32_t,  uint32_t)' {aka 'void(long unsigned int,  long unsigned int)'}
+  397 | void PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue)
       |      ^~~~~~~~~~
 In file included from ./PSFB/psfb.c:24:
-./PSFB/psfb.h:113:21: note: previous declaration of 'PSFB_Start' with type 'void(void)'
-  113 | void                PSFB_Start(void);
+./PSFB/psfb.h:119:21: note: previous declaration of 'PWM_Config' with type 'void(CM_HRPWM_TypeDef *, uint32_t,  uint32_t)' {aka 'void(CM_HRPWM_TypeDef *, long unsigned int,  long unsigned int)'}
+  119 | void                PWM_Config(CM_HRPWM_TypeDef *HRPWMx, uint32_t u32PeriodValue, uint32_t u32CompareValue);
       |                     ^~~~~~~~~~
 
-[2026-10-23 10:54:26]	[info] incremental build: 2 source files changed
+[2026-11-04 17:27:01]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:54:29]	[done]
-	build successfully !
+[2026-11-04 17:27:02]	compilation failed at : "c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
+   at unify_builder.Program.Main(String[] args_)
+---
+In file included from ./PSFB/psfb.c:24:
+./PSFB/psfb.c: In function 'PSFB_BSP_Init':
+./PSFB/psfb.h:51:33: error: passing argument 1 of 'PWM_Config' makes integer from pointer without a cast [-Wint-conversion]
+   51 | #define HRPWM_MASTER            (CM_HRPWM2)
+      |                                 ^~~~~~~~~~~
+      |                                 |
+      |                                 CM_HRPWM_TypeDef *
+./PSFB/psfb.c:333:16: note: in expansion of macro 'HRPWM_MASTER'
+  333 |     PWM_Config(HRPWM_MASTER,  PSFB_PERIOD, PSFB_PERIOD / 3);
+      |                ^~~~~~~~~~~~
+./PSFB/psfb.h:119:41: note: expected 'uint32_t' {aka 'long unsigned int'} but argument is of type 'CM_HRPWM_TypeDef *'
+  119 | void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue);
+      |                                ~~~~~~~~~^~~~~~~~~~~~~~
+./PSFB/psfb.c:333:5: error: too many arguments to function 'PWM_Config'; expected 2, have 3
+  333 |     PWM_Config(HRPWM_MASTER,  PSFB_PERIOD, PSFB_PERIOD / 3);
+      |     ^~~~~~~~~~
+./PSFB/psfb.h:119:21: note: declared here
+  119 | void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue);
+      |                     ^~~~~~~~~~
 
-[2026-10-23 10:57:57]	[info] incremental build: 2 source files changed
+[2026-11-04 17:27:26]	[info] incremental build: 2 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 10:58:01]	[done]
+[2026-11-04 17:27:28]	[done]
 	build successfully !
 
-[2026-10-23 11:56:01]	[info] incremental build: 1 source files changed
+[2026-11-04 17:31:33]	[info] incremental build: 1 source files changed
 These source files will be recompiled
 ---
 'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
 
-[2026-10-23 11:56:04]	[done]
-	build successfully !
-
-[2026-10-23 15:22:17]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 15:22:19]	[done]
-	build successfully !
-
-[2026-10-23 16:12:57]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 16:12:59]	[done]
-	build successfully !
-
-[2026-10-23 16:19:13]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 16:19:14]	[done]
-	build successfully !
-
-[2026-10-23 16:21:21]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 16:21:23]	[done]
-	build successfully !
-
-[2026-10-23 16:22:57]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 16:22:59]	[done]
-	build successfully !
-
-[2026-10-23 16:34:19]	[info] incremental build: 1 source files changed
-These source files will be recompiled
----
-'c:\Users\rsta1033\Desktop\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
-
-[2026-10-23 16:34:21]	[done]
+[2026-11-04 17:31:34]	[done]
 	build successfully !
 

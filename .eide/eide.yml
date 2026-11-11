@@ -112,9 +112,9 @@ targets:
         bin: ""
         config: .eide/debug.pyocd.yaml
         otherCmds: ""
-        speed: 20M
+        speed: 10M
         targetName: hc32f334jati
-    uploader: JLink
+    uploader: pyOCD
   Release:
     cppPreprocessAttrs:
       defineList: []

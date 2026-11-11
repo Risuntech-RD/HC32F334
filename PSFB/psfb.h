@@ -26,48 +26,36 @@
 extern "C" {
 #endif
 
+/*===================== 系统时钟参数 (24MHz XTAL -> 120MHz) =====================*/
+#define PSFB_XTAL_FREQ_HZ       (24000000UL)
+#define PSFB_SYSCLK_HZ          (120000000UL)
 
-/*=========================== 可配置参数 ===========================*/
-#define PSFB_HRPWM_CLK_HZ       (120000000UL)
-#define PSFB_PWM_FREQ_HZ        (20000UL)
-#define PSFB_DEAD_TIME_NS       (500UL)
+/*===================== HRPWM时钟参数 =====================*/
+#define PSFB_HRPWM_CLK_HZ       (PSFB_SYSCLK_HZ)    /* HRPWM 时钟 = PCLK0 = 120MHz */
+#define PSFB_PWM_FREQ_HZ        (40000UL)           /* 开关频率 40kHz */
+#define PSFB_DEAD_TIME_NS       (500UL)             /* 死区时间 500nS */
 
-
-/* 死区计数: (120MHz * 500ns) << 6 = 60 << 6 = 3840 */
-#define PSFB_HRPWM_DT_CNT       (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)
-#define PSFB_HRPWM_HALF_PERIOD  (uint32_t)(PSFB_HRPWM_PERIOD / 2U)
-#define PSFB_INIT_PHASE_CNT     (uint32_t)(250U << 6)   /* 250 PCLK0 周期的相位偏移 */
 
 /*--------------------------- 计算值 ---------------------------*/
 /* HRPWM 高精度寄存器格式: 1 PCLK0 周期 = 64 计数 (<<6), 低6位为小数 */
-#define PSFB_PERIOD             (uint32_t)((PSFB_HRPWM_CLK_HZ / (2UL * PSFB_PWM_FREQ_HZ)) << 6)
-#define PSFB_DT_CNT             (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)
+#define PSFB_PERIOD             (uint32_t)((PSFB_HRPWM_CLK_HZ / (PSFB_PWM_FREQ_HZ)) << 6)                     // 120000000/(40000)<<6 = 3000<<6 = 192000
+#define PSFB_DT_CNT             (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)     // 60<<6 = 3840
 #define PSFB_HALF_PERIOD        (uint32_t)(PSFB_PERIOD / 2U)
-
-/* 中心对齐: 频率 = HRPWM_CLK / (2 * PERIOD)
- * HRPWM 高精度寄存器: 1 PCLK0 周期 = 64 计数 (<<6)
- * PERIOD = (120M / (2*20k)) << 6 = 3000 << 6 = 192000 */
-#define PSFB_HRPWM_PERIOD       (uint32_t)((PSFB_HRPWM_CLK_HZ / (2UL * PSFB_PWM_FREQ_HZ)) << 6)
 
 /* 相位限幅: 5°~170°, 避免 0°(满电压冲击/偏磁) 与 180°(直通/环流损耗) */
 #define PSFB_PHASE_MIN          (uint32_t)((PSFB_PERIOD * 5UL)   / 180UL)
+#define PSFB_PHASE_MID          (uint32_t)((PSFB_PERIOD * 90UL)  / 180UL)
 #define PSFB_PHASE_MAX          (uint32_t)((PSFB_PERIOD * 170UL) / 180UL)
 
 /*--------------------- HRPWM 模块定义 ---------------------*/
 #define HRPWM_MASTER            (CM_HRPWM2)
 #define HRPWM_SLAVE             (CM_HRPWM3)
 
-
-
-/*===================== 系统时钟参数 (24MHz XTAL -> 120MHz) =====================*/
-#define PSFB_XTAL_FREQ_HZ       (24000000UL)
-#define PSFB_SYSCLK_HZ          (120000000UL)
-
-/*===================== HRPWM 参数 =====================*/
-#define PSFB_PWM_FREQ_HZ        (20000UL)       /* 开关频率 20kHz */
-#define PSFB_HRPWM_CLK_HZ       (120000000UL)   /* HRPWM 时钟 = PCLK0 = 120MHz */
-#define PSFB_DEAD_TIME_NS       (500UL)
-
+/* PHSCMP value */
+#define HRPWM_PHSCMP1_VALUE     ((1 * PSFB_PERIOD * 2 / 3U) - 64U)
+#define HRPWM_PHSCMP2_VALUE     ((2 * PSFB_PERIOD * 2 / 3U) - 64U)  
+/* Dead time value 130pS * 100000 = 13uS */
+#define HRPWM_DEADTIME_VALUE            (10000UL)
 
 /*----- 电流采样配置 (R18=0.5Ω, U6.1 LM358 同相放大 Gain=2) -----*/
 #define ISENSE_ADC_PORT         (GPIO_PORT_A)
@@ -99,13 +87,13 @@ extern volatile uint16_t        isenseDmaBuf[ISENSE_DMA_BUF_DEPTH];
 /*===================== 状态机 =====================*/
 typedef enum
 {
-    PSFB_SOFTSTART_ON       = (0U),
-    PSFB_SOFTSTART_OFF      = (1U),
+    PSFB_SS_ENABLE      = (0U),        // 软启动开启
+    PSFB_SS_DISABLE     = (1U),        // 软启动关闭
 } psfb_state_t;
 
-/* 软启动延时 = PSFB_SOFTSTART_STEPS * PSFB_SOFTSTART_DELAY_MS = 400mS */
-#define PSFB_SOFTSTART_STEPS    (40U)
-#define PSFB_SOFTSTART_DELAY_MS (10U)
+/* 软启动延时 = PSFB_SS_STEPS * PSFB_SS_DELAY_MS = 400mS */
+#define PSFB_SS_STEPS    (40U)
+#define PSFB_SS_DELAY_MS (10U)
 
 
 /*===================== 函数声明 =====================*/
@@ -128,7 +116,9 @@ void                ISENSE_Init(void);
 
 void                PSFB_BSP_Init(void);
 
-
+void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue);
+void                DeadTime_Config(void);
+void                Phase_Config(void);
 
 #ifdef __cplusplus
 }

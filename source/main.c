@@ -39,15 +39,16 @@ int main(void)
 
     /* 初始化系统时钟和外设 */
     LL_PERIPH_WE(LL_PERIPH_ALL);
-    Delay_ms(1000U);                // 等待系统时钟稳定
-    App_USARTxCfg();                // 初始化USART1
     App_PortCfg();                  // 初始化GPIO端口
     App_Tmra2Cfg();                 // 初始化TMRA2
+    App_USARTxCfg();                // 初始化USART1
     __enable_irq();                 // 使能中断总线
+    Delay_ms(100U);                 // 等待系统时钟稳定
 
     debug_output();                 // 输出系统信息
 
     PSFB_BSP_Init();                // 初始化PSFB_HC
+    //PSFB_Start(PSFB_SS_ENABLE);     // 启动HPRPWM
 
 
     /* 主循环 */
@@ -61,7 +62,7 @@ int main(void)
         if (m_stcTime.SS != u8LastSec)
         {
             u8LastSec = (uint8_t)m_stcTime.SS;
-            snprintf(UartStr, sizeof(UartStr), "LED blink\nTime: %02d:%02d:%02d\r\n", m_stcTime.HH, m_stcTime.MM, m_stcTime.SS);
+            snprintf(UartStr, sizeof(UartStr), "LED blink\nTime: %02d:%02d:%02d\n", m_stcTime.HH, m_stcTime.MM, m_stcTime.SS);
             Log_SendString(UartStr);
         }
     }
@@ -109,11 +110,11 @@ static void debug_output(void)
 {
     char    uartDebugData[64];
 
-    Log_SendString("***************************************************************\r\n");
+    Log_SendString("***************************************************************\n");
     /* 系统时钟输出 */
-    snprintf(uartDebugData, sizeof(uartDebugData), "System Build time: %s %s\r\n", __DATE__, __TIME__);
+    snprintf(uartDebugData, sizeof(uartDebugData), "System Build time: %s %s\n", __DATE__, __TIME__);
     Log_SendString(uartDebugData);
-    snprintf(uartDebugData, sizeof(uartDebugData), "SystemCoreClock = %d MHz\r\n", (int)(SystemCoreClock / 1000000U));
+    snprintf(uartDebugData, sizeof(uartDebugData), "SystemCoreClock = %d MHz\n", (int)(SystemCoreClock / 1000000U));
     Log_SendString(uartDebugData);
 
     /* 确认系统时钟源和 PLL 源 */
@@ -122,11 +123,11 @@ static void debug_output(void)
 
     snprintf(uartDebugData,
             sizeof(uartDebugData),
-            "SystemClockSource = %s, PLLSource = %s\r\n",
+            "SystemClockSource = %s, PLLSource = %s\n",
             ClkSource[(uint8_t)(CM_CMU->CKSWR & CMU_CKSWR_CKSW)],
             PllSource[(uint8_t)((CM_CMU->PLLHCFGR & CMU_PLLHCFGR_PLLSRC) >> CMU_PLLHCFGR_PLLSRC_POS)]);
     Log_SendString(uartDebugData);
-    Log_SendString("***************************************************************\r\n\r\n");
+    Log_SendString("***************************************************************\n");
 
 }
 

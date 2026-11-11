@@ -92,32 +92,38 @@ Discarded input sections
  .text          0x00000000        0x0 ./build/Debug/.obj/PSFB/psfb.o
  .data          0x00000000        0x0 ./build/Debug/.obj/PSFB/psfb.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/PSFB/psfb.o
- .text.HRPWM_CountStart
-                0x00000000       0x78 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_CountStop
                 0x00000000       0x78 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_PWM_ChAOutputDisable
                 0x00000000       0x78 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_PWM_ChBOutputDisable
                 0x00000000       0x78 ./build/Debug/.obj/PSFB/psfb.o
- .text.HRPWM_IDLE_Exit
-                0x00000000       0x58 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_PH_Disable
                 0x00000000       0x6c ./build/Debug/.obj/PSFB/psfb.o
+ .data.phaseCnt
+                0x00000000        0x4 ./build/Debug/.obj/PSFB/psfb.o
  .bss.isenseBuf
                 0x00000000       0x10 ./build/Debug/.obj/PSFB/psfb.o
  .bss.isenseIdx
                 0x00000000        0x1 ./build/Debug/.obj/PSFB/psfb.o
  .bss.isenseLatestA
                 0x00000000        0x4 ./build/Debug/.obj/PSFB/psfb.o
+ .bss.isenseDmaBuf
+                0x00000000       0x20 ./build/Debug/.obj/PSFB/psfb.o
  .text.PSFB_SetPhase
-                0x00000000       0x44 ./build/Debug/.obj/PSFB/psfb.o
+                0x00000000       0x4c ./build/Debug/.obj/PSFB/psfb.o
  .text.PSFB_GetPhase
                 0x00000000       0x14 ./build/Debug/.obj/PSFB/psfb.o
  .text.PSFB_Start
-                0x00000000       0xa0 ./build/Debug/.obj/PSFB/psfb.o
+                0x00000000       0xac ./build/Debug/.obj/PSFB/psfb.o
  .text.PSFB_Stop
                 0x00000000       0x44 ./build/Debug/.obj/PSFB/psfb.o
+ .text.ISENSE_GPIO_Init
+                0x00000000       0x28 ./build/Debug/.obj/PSFB/psfb.o
+ .text.ISENSE_ADC_Init
+                0x00000000       0x74 ./build/Debug/.obj/PSFB/psfb.o
+ .text.ISENSE_DMA_Init
+                0x00000000       0x84 ./build/Debug/.obj/PSFB/psfb.o
  .text.ISENSE_ReadRaw
                 0x00000000       0x48 ./build/Debug/.obj/PSFB/psfb.o
  .text.ISENSE_Sample
@@ -126,6 +132,8 @@ Discarded input sections
                 0x00000000       0x1c ./build/Debug/.obj/PSFB/psfb.o
  .text.ISENSE_CheckOverCurrent
                 0x00000000       0x2c ./build/Debug/.obj/PSFB/psfb.o
+ .text.ISENSE_Init
+                0x00000000       0x14 ./build/Debug/.obj/PSFB/psfb.o
  .text          0x00000000        0x0 ./build/Debug/.obj/common/syscalls.o
  .data          0x00000000        0x0 ./build/Debug/.obj/common/syscalls.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/common/syscalls.o
@@ -175,8 +183,15 @@ Discarded input sections
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .rodata        0x00000000       0x1b ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_Init
+                0x00000000       0xe4 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_DeInit
                 0x00000000       0xc8 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_StructInit
+                0x00000000       0x36 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_ChCmd
+                0x00000000       0xd0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_MxChCmd
                 0x00000000       0xd4 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_SetSampleTime
@@ -193,8 +208,14 @@ Discarded input sections
                 0x00000000       0x88 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_SetOverSampleShift
                 0x00000000       0x7c ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_TriggerConfig
+                0x00000000       0xc0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_TriggerCmd
+                0x00000000       0xb8 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_IntCmd
                 0x00000000       0xac ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .text.ADC_Start
+                0x00000000       0x60 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_Stop
                 0x00000000       0x48 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_GetValue
@@ -239,13 +260,40 @@ Discarded input sections
                 0x00000000       0x84 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text.ADC_SetSeqResumeMode
                 0x00000000       0x80 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_info    0x00000000     0x1a54 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_abbrev  0x00000000      0x1bc ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_aranges
+                0x00000000      0x148 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_rnglists
+                0x00000000      0x10a ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_line    0x00000000      0xcda ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_str     0x00000000      0xc5d ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .comment       0x00000000       0x46 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .debug_frame   0x00000000      0x56c ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+ .ARM.attributes
+                0x00000000       0x34 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .rodata        0x00000000       0x1b ./build/Debug/.obj/driver/src/hc32_ll_aos.o
  .text.AOS_DeInit
                 0x00000000       0x70 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
  .text.AOS_CommonTriggerCmd
                 0x00000000       0x94 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .text.AOS_SetTriggerEventSrc
+                0x00000000       0x5c ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_info    0x00000000     0x1086 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_abbrev  0x00000000      0x15f ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_aranges
+                0x00000000       0x30 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_rnglists
+                0x00000000       0x20 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_line    0x00000000      0x1e0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_str     0x00000000     0x1dcc ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .comment       0x00000000       0x46 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .debug_frame   0x00000000       0x7c ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+ .ARM.attributes
+                0x00000000       0x34 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
@@ -306,6 +354,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .rodata        0x00000000       0x1b ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_Cmd  0x00000000       0x48 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_ErrIntCmd
                 0x00000000       0x7c ./build/Debug/.obj/driver/src/hc32_ll_dma.o
@@ -321,6 +370,8 @@ Discarded input sections
                 0x00000000       0x4c ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_MxChCmd
                 0x00000000       0x6c ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .text.DMA_ChCmd
+                0x00000000       0x80 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_GetTransStatus
                 0x00000000       0x5c ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_GetRequestStatus
@@ -351,6 +402,14 @@ Discarded input sections
                 0x00000000      0x138 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_UnitDeInit
                 0x00000000       0x88 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .text.DMA_StructInit
+                0x00000000       0x56 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .text.DMA_Init
+                0x00000000      0x1c8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .text.DMA_RepeatStructInit
+                0x00000000       0x38 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .text.DMA_RepeatInit
+                0x00000000       0xe8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_NonSeqStructInit
                 0x00000000       0x44 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_NonSeqInit
@@ -399,6 +458,18 @@ Discarded input sections
                 0x00000000       0x4c ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text.DMA_SWReconfig
                 0x00000000       0x38 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_info    0x00000000     0x2392 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_abbrev  0x00000000      0x23b ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_aranges
+                0x00000000      0x1b8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_rnglists
+                0x00000000      0x152 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_line    0x00000000      0xd30 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_str     0x00000000     0x1120 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .comment       0x00000000       0x46 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .debug_frame   0x00000000      0x778 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+ .ARM.attributes
+                0x00000000       0x34 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
@@ -499,6 +570,8 @@ Discarded input sections
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .data          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .bss           0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .text.FCG_Fcg0PeriphClockCmd
+                0x00000000       0x84 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .text.FCG_Fcg1PeriphClockCmd
                 0x00000000       0x70 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
@@ -536,8 +609,6 @@ Discarded input sections
                 0x00000000       0xe8 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .text.GPIO_ExtIntCmd
                 0x00000000      0x114 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .text.GPIO_HrpwmPinCmd
-                0x00000000       0x90 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .text.GPIO_HrpwmPinSwapCmd
                 0x00000000       0x94 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .text          0x00000000        0x0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
@@ -549,6 +620,8 @@ Discarded input sections
                 0x00000000       0x20 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_PeriodInit
                 0x00000000       0x2a ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .text.HRPWM_DeInit
+                0x00000000      0x2ac ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_PWM_ChAInit_Buf
                 0x00000000      0x428 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_PWM_ChBInit_Buf
@@ -1293,7 +1366,7 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
  .icg_sec       0x00000400       0x60 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
                 0x00000400                u32ICGValue
 
-.text           0x00000460     0x73cc
+.text           0x00000460     0x6948
                 0x00000460                        . = ALIGN (0x4)
  *(.text)
  .text          0x00000460      0x378 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
@@ -1480,522 +1553,477 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
                 0x00000e88                TMR4_SCmp_Handler
  .text.HRPWM_Enable
                 0x00000e8c       0x78 ./build/Debug/.obj/PSFB/psfb.o
- .text.HRPWM_PWM_ChAOutputEnable
+ .text.HRPWM_CountStart
                 0x00000f04       0x78 ./build/Debug/.obj/PSFB/psfb.o
- .text.HRPWM_PWM_ChBOutputEnable
+ .text.HRPWM_PWM_ChAOutputEnable
                 0x00000f7c       0x78 ./build/Debug/.obj/PSFB/psfb.o
- .text.HRPWM_DeadTimeEnable
+ .text.HRPWM_PWM_ChBOutputEnable
                 0x00000ff4       0x78 ./build/Debug/.obj/PSFB/psfb.o
+ .text.HRPWM_IDLE_Exit
+                0x0000106c       0x58 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_PH_Enable
-                0x0000106c       0x6c ./build/Debug/.obj/PSFB/psfb.o
+                0x000010c4       0x6c ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_SetDeadTimeUpValue
-                0x000010d8       0x94 ./build/Debug/.obj/PSFB/psfb.o
+                0x00001130       0x94 ./build/Debug/.obj/PSFB/psfb.o
+ .text.HRPWM_SetDeadTimeDownValue
+                0x000011c4       0x94 ./build/Debug/.obj/PSFB/psfb.o
  .text.HRPWM_PH_SetCompareValue
-                0x0000116c       0x50 ./build/Debug/.obj/PSFB/psfb.o
+                0x00001258       0x50 ./build/Debug/.obj/PSFB/psfb.o
+ .text.HRPWM_PH_SetCompareValue_Buf
+                0x000012a8       0x50 ./build/Debug/.obj/PSFB/psfb.o
  .text.PSFB_GPIO_Init
-                0x000011bc       0x8a ./build/Debug/.obj/PSFB/psfb.o
- *fill*         0x00001246        0x2 
- .text.PSFB_HRPWM2_Init
-                0x00001248       0xf0 ./build/Debug/.obj/PSFB/psfb.o
- .text.PSFB_HRPWM3_Init
-                0x00001338      0x10c ./build/Debug/.obj/PSFB/psfb.o
- .text.ISENSE_GPIO_Init
-                0x00001444       0x28 ./build/Debug/.obj/PSFB/psfb.o
- .text.ISENSE_ADC_Init
-                0x0000146c       0x74 ./build/Debug/.obj/PSFB/psfb.o
- .text.ISENSE_DMA_Init
-                0x000014e0       0x84 ./build/Debug/.obj/PSFB/psfb.o
- .text.ISENSE_Init
-                0x00001564       0x14 ./build/Debug/.obj/PSFB/psfb.o
-                0x00001564                ISENSE_Init
+                0x000012f8       0x92 ./build/Debug/.obj/PSFB/psfb.o
+ *fill*         0x0000138a        0x2 
  .text.PSFB_BSP_Init
-                0x00001578       0x48 ./build/Debug/.obj/PSFB/psfb.o
-                0x00001578                PSFB_BSP_Init
- .text._sbrk    0x000015c0       0x58 ./build/Debug/.obj/common/syscalls.o
-                0x000015c0                _sbrk
+                0x0000138c       0x5c ./build/Debug/.obj/PSFB/psfb.o
+                0x0000138c                PSFB_BSP_Init
+ .text.Phase_Config
+                0x000013e8       0x50 ./build/Debug/.obj/PSFB/psfb.o
+                0x000013e8                Phase_Config
+ .text.DeadTime_Config
+                0x00001438       0x68 ./build/Debug/.obj/PSFB/psfb.o
+                0x00001438                DeadTime_Config
+ .text.PWM_Config
+                0x000014a0      0x128 ./build/Debug/.obj/PSFB/psfb.o
+                0x000014a0                PWM_Config
+ .text._sbrk    0x000015c8       0x58 ./build/Debug/.obj/common/syscalls.o
+                0x000015c8                _sbrk
  .text.SystemInit
-                0x00001618      0x134 ./build/Debug/.obj/common/system_hc32f334.o
-                0x00001618                SystemInit
+                0x00001620      0x134 ./build/Debug/.obj/common/system_hc32f334.o
+                0x00001620                SystemInit
  .text.SystemCoreClockUpdate
-                0x0000174c      0x128 ./build/Debug/.obj/common/system_hc32f334.o
-                0x0000174c                SystemCoreClockUpdate
+                0x00001754      0x128 ./build/Debug/.obj/common/system_hc32f334.o
+                0x00001754                SystemCoreClockUpdate
  .text.EFM_REG_Unlock
-                0x00001874       0x20 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x0000187c       0x20 ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.EFM_OTP_REG_Unlock
-                0x00001894       0x24 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x0000189c       0x24 ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.GPIO_REG_Unlock
-                0x000018b8       0x1c ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x000018c0       0x1c ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.PWC_REG_Unlock
-                0x000018d4       0x34 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x000018dc       0x34 ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.PWC_FCG0_REG_Unlock
-                0x00001908       0x1c ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x00001910       0x1c ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.SRAM_REG_Unlock
-                0x00001924       0x18 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x0000192c       0x18 ./build/Debug/.obj/driver/src/hc32_ll.o
  .text.LL_PERIPH_WE
-                0x0000193c       0x7a ./build/Debug/.obj/driver/src/hc32_ll.o
-                0x0000193c                LL_PERIPH_WE
- *fill*         0x000019b6        0x2 
- .text.ADC_Init
-                0x000019b8       0xe4 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x000019b8                ADC_Init
- .text.ADC_StructInit
-                0x00001a9c       0x36 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x00001a9c                ADC_StructInit
- *fill*         0x00001ad2        0x2 
- .text.ADC_ChCmd
-                0x00001ad4       0xd0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x00001ad4                ADC_ChCmd
- .text.ADC_TriggerConfig
-                0x00001ba4       0xc0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x00001ba4                ADC_TriggerConfig
- .text.ADC_TriggerCmd
-                0x00001c64       0xb8 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x00001c64                ADC_TriggerCmd
- .text.ADC_Start
-                0x00001d1c       0x60 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                0x00001d1c                ADC_Start
- .text.AOS_SetTriggerEventSrc
-                0x00001d7c       0x5c ./build/Debug/.obj/driver/src/hc32_ll_aos.o
-                0x00001d7c                AOS_SetTriggerEventSrc
+                0x00001944       0x7a ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x00001944                LL_PERIPH_WE
  .text.CLK_WaitStable
-                0x00001dd8       0x44 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000019be       0x44 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ *fill*         0x00001a02        0x2 
  .text.SetSysClockSrc
-                0x00001e1c      0x118 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00001a04      0x118 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .text.SetSysClockDiv
-                0x00001f34      0x324 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00001b1c      0x324 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .text.CLK_HrcCmd
-                0x00002258       0xd8 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002258                CLK_HrcCmd
+                0x00001e40       0xd8 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00001e40                CLK_HrcCmd
  .text.CLK_XtalStructInit
-                0x00002330       0x3e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002330                CLK_XtalStructInit
- *fill*         0x0000236e        0x2 
+                0x00001f18       0x3e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00001f18                CLK_XtalStructInit
+ *fill*         0x00001f56        0x2 
  .text.CLK_XtalInit
-                0x00002370      0x128 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002370                CLK_XtalInit
+                0x00001f58      0x128 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00001f58                CLK_XtalInit
  .text.CLK_XtalCmd
-                0x00002498      0x104 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002498                CLK_XtalCmd
+                0x00002080      0x104 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00002080                CLK_XtalCmd
  .text.CLK_PLLStructInit
-                0x0000259c       0x76 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x0000259c                CLK_PLLStructInit
- *fill*         0x00002612        0x2 
+                0x00002184       0x76 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00002184                CLK_PLLStructInit
+ *fill*         0x000021fa        0x2 
  .text.CLK_PLLInit
-                0x00002614      0x2d8 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002614                CLK_PLLInit
+                0x000021fc      0x2d8 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000021fc                CLK_PLLInit
  .text.CLK_PLLCmd
-                0x000028ec       0xfc ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x000028ec                CLK_PLLCmd
+                0x000024d4       0xfc ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000024d4                CLK_PLLCmd
  .text.CLK_GetStableStatus
-                0x000029e8       0x54 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x000029e8                CLK_GetStableStatus
+                0x000025d0       0x54 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000025d0                CLK_GetStableStatus
  .text.CLK_SetSysClockSrc
-                0x00002a3c       0x1e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002a3c                CLK_SetSysClockSrc
+                0x00002624       0x1e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00002624                CLK_SetSysClockSrc
  .text.CLK_SetClockDiv
-                0x00002a5a       0x1e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                0x00002a5a                CLK_SetClockDiv
- .text.DMA_ChCmd
-                0x00002a78       0x80 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                0x00002a78                DMA_ChCmd
- .text.DMA_StructInit
-                0x00002af8       0x56 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                0x00002af8                DMA_StructInit
- *fill*         0x00002b4e        0x2 
- .text.DMA_Init
-                0x00002b50      0x1c8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                0x00002b50                DMA_Init
- .text.DMA_RepeatStructInit
-                0x00002d18       0x38 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                0x00002d18                DMA_RepeatStructInit
- .text.DMA_RepeatInit
-                0x00002d50       0xe8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                0x00002d50                DMA_RepeatInit
+                0x00002642       0x1e ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00002642                CLK_SetClockDiv
  .text.EFM_SetWaitCycle
-                0x00002e38       0xa0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
-                0x00002e38                EFM_SetWaitCycle
- .text.FCG_Fcg0PeriphClockCmd
-                0x00002ed8       0x84 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
-                0x00002ed8                FCG_Fcg0PeriphClockCmd
+                0x00002660       0xa0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+                0x00002660                EFM_SetWaitCycle
  .text.FCG_Fcg2PeriphClockCmd
-                0x00002f5c       0x70 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
-                0x00002f5c                FCG_Fcg2PeriphClockCmd
+                0x00002700       0x70 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+                0x00002700                FCG_Fcg2PeriphClockCmd
  .text.FCG_Fcg3PeriphClockCmd
-                0x00002fcc       0x70 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
-                0x00002fcc                FCG_Fcg3PeriphClockCmd
+                0x00002770       0x70 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+                0x00002770                FCG_Fcg3PeriphClockCmd
  .text.GPIO_Init
-                0x0000303c      0x2c8 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x0000303c                GPIO_Init
+                0x000027e0      0x2c8 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x000027e0                GPIO_Init
  .text.GPIO_StructInit
-                0x00003304       0x6e ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x00003304                GPIO_StructInit
- *fill*         0x00003372        0x2 
+                0x00002aa8       0x6e ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002aa8                GPIO_StructInit
+ *fill*         0x00002b16        0x2 
  .text.GPIO_SetFunc
-                0x00003374      0x104 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x00003374                GPIO_SetFunc
+                0x00002b18      0x104 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002b18                GPIO_SetFunc
  .text.GPIO_SubFuncCmd
-                0x00003478       0xe4 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x00003478                GPIO_SubFuncCmd
+                0x00002c1c       0xe4 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002c1c                GPIO_SubFuncCmd
  .text.GPIO_SetSubFunc
-                0x0000355c       0x84 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x0000355c                GPIO_SetSubFunc
+                0x00002d00       0x84 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002d00                GPIO_SetSubFunc
  .text.GPIO_TogglePins
-                0x000035e0       0x78 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
-                0x000035e0                GPIO_TogglePins
+                0x00002d84       0x78 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002d84                GPIO_TogglePins
+ .text.GPIO_HrpwmPinCmd
+                0x00002dfc       0x90 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x00002dfc                GPIO_HrpwmPinCmd
  .text.HRPWM_CALIB_SingleEnable
-                0x00003658       0x20 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002e8c       0x20 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_SingleDisable
-                0x00003678       0x24 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002eac       0x24 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_PeriodDisable
-                0x0000369c       0x24 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002ed0       0x24 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_GetStatus
-                0x000036c0       0x44 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002ef4       0x44 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_ClearFlag
-                0x00003704       0x48 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002f38       0x48 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .text.HRPWM_CALIB_ProcessSingle
-                0x0000374c       0x90 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x0000374c                HRPWM_CALIB_ProcessSingle
+                0x00002f80       0x90 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00002f80                HRPWM_CALIB_ProcessSingle
  .text.HRPWM_StructInit
-                0x000037dc       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x000037dc                HRPWM_StructInit
+                0x00003010       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003010                HRPWM_StructInit
  .text.HRPWM_Init
-                0x00003818       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00003818                HRPWM_Init
- .text.HRPWM_DeInit
-                0x000038f8      0x2ac ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x000038f8                HRPWM_DeInit
+                0x0000304c       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x0000304c                HRPWM_Init
  .text.HRPWM_CommonDeInit
-                0x00003ba4       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00003ba4                HRPWM_CommonDeInit
+                0x0000312c       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x0000312c                HRPWM_CommonDeInit
  .text.HRPWM_PWM_StructInit
-                0x00003c84       0x90 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00003c84                HRPWM_PWM_StructInit
+                0x0000320c       0x90 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x0000320c                HRPWM_PWM_StructInit
  .text.HRPWM_PWM_ChAInit
-                0x00003d14      0x428 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00003d14                HRPWM_PWM_ChAInit
+                0x0000329c      0x428 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x0000329c                HRPWM_PWM_ChAInit
  .text.HRPWM_PWM_ChBInit
-                0x0000413c      0x428 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x0000413c                HRPWM_PWM_ChBInit
+                0x000036c4      0x428 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x000036c4                HRPWM_PWM_ChBInit
  .text.HRPWM_DeadTimeStructInit
-                0x00004564       0x36 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00004564                HRPWM_DeadTimeStructInit
- *fill*         0x0000459a        0x2 
+                0x00003aec       0x36 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003aec                HRPWM_DeadTimeStructInit
+ *fill*         0x00003b22        0x2 
  .text.HRPWM_DeadTimeConfig
-                0x0000459c       0xf0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x0000459c                HRPWM_DeadTimeConfig
+                0x00003b24       0xf0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003b24                HRPWM_DeadTimeConfig
  .text.HRPWM_SYNC_StructInit
-                0x0000468c       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x0000468c                HRPWM_SYNC_StructInit
+                0x00003c14       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003c14                HRPWM_SYNC_StructInit
  .text.HRPWM_SYNC_Config
-                0x000046c8       0xb0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x000046c8                HRPWM_SYNC_Config
+                0x00003c50       0xb0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003c50                HRPWM_SYNC_Config
  .text.HRPWM_PH_StructInit
-                0x00004778       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x00004778                HRPWM_PH_StructInit
+                0x00003d00       0x3c ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003d00                HRPWM_PH_StructInit
  .text.HRPWM_PH_Config
-                0x000047b4      0x100 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
-                0x000047b4                HRPWM_PH_Config
+                0x00003d3c      0x100 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00003d3c                HRPWM_PH_Config
  .text.INTC_IntSrcCmd
-                0x000048b4       0x90 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x000048b4                INTC_IntSrcCmd
+                0x00003e3c       0x90 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003e3c                INTC_IntSrcCmd
  .text.IRQ000_Handler
-                0x00004944       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004944                IRQ000_Handler
+                0x00003ecc       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003ecc                IRQ000_Handler
  .text.IRQ001_Handler
-                0x0000495c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x0000495c                IRQ001_Handler
+                0x00003ee4       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003ee4                IRQ001_Handler
  .text.IRQ002_Handler
-                0x00004974       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004974                IRQ002_Handler
+                0x00003efc       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003efc                IRQ002_Handler
  .text.IRQ003_Handler
-                0x0000498c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x0000498c                IRQ003_Handler
+                0x00003f14       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f14                IRQ003_Handler
  .text.IRQ004_Handler
-                0x000049a4       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x000049a4                IRQ004_Handler
+                0x00003f2c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f2c                IRQ004_Handler
  .text.IRQ005_Handler
-                0x000049bc       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x000049bc                IRQ005_Handler
+                0x00003f44       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f44                IRQ005_Handler
  .text.IRQ006_Handler
-                0x000049d4       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x000049d4                IRQ006_Handler
+                0x00003f5c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f5c                IRQ006_Handler
  .text.IRQ007_Handler
-                0x000049ec       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x000049ec                IRQ007_Handler
+                0x00003f74       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f74                IRQ007_Handler
  .text.IRQ008_Handler
-                0x00004a04       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a04                IRQ008_Handler
+                0x00003f8c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003f8c                IRQ008_Handler
  .text.IRQ009_Handler
-                0x00004a1c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a1c                IRQ009_Handler
+                0x00003fa4       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003fa4                IRQ009_Handler
  .text.IRQ010_Handler
-                0x00004a34       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a34                IRQ010_Handler
+                0x00003fbc       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003fbc                IRQ010_Handler
  .text.IRQ011_Handler
-                0x00004a4c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a4c                IRQ011_Handler
+                0x00003fd4       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003fd4                IRQ011_Handler
  .text.IRQ012_Handler
-                0x00004a64       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a64                IRQ012_Handler
+                0x00003fec       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00003fec                IRQ012_Handler
  .text.IRQ013_Handler
-                0x00004a7c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a7c                IRQ013_Handler
+                0x00004004       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00004004                IRQ013_Handler
  .text.IRQ014_Handler
-                0x00004a94       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004a94                IRQ014_Handler
+                0x0000401c       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x0000401c                IRQ014_Handler
  .text.IRQ015_Handler
-                0x00004aac       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
-                0x00004aac                IRQ015_Handler
+                0x00004034       0x18 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00004034                IRQ015_Handler
  .text.TMRA_Init
-                0x00004ac4      0x1d0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004ac4                TMRA_Init
+                0x0000404c      0x1d0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x0000404c                TMRA_Init
  .text.TMRA_StructInit
-                0x00004c94       0x56 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004c94                TMRA_StructInit
- *fill*         0x00004cea        0x2 
+                0x0000421c       0x56 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x0000421c                TMRA_StructInit
+ *fill*         0x00004272        0x2 
  .text.TMRA_SetPeriodValue
-                0x00004cec       0x64 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004cec                TMRA_SetPeriodValue
+                0x00004274       0x64 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x00004274                TMRA_SetPeriodValue
  .text.TMRA_GetStatus
-                0x00004d50       0xb4 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004d50                TMRA_GetStatus
+                0x000042d8       0xb4 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x000042d8                TMRA_GetStatus
  .text.TMRA_ClearStatus
-                0x00004e04       0xb4 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004e04                TMRA_ClearStatus
+                0x0000438c       0xb4 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x0000438c                TMRA_ClearStatus
  .text.TMRA_IntCmd
-                0x00004eb8      0x120 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004eb8                TMRA_IntCmd
+                0x00004440      0x120 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x00004440                TMRA_IntCmd
  .text.TMRA_Start
-                0x00004fd8       0x70 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
-                0x00004fd8                TMRA_Start
+                0x00004560       0x70 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x00004560                TMRA_Start
  .text.UART_CalculateBrr
-                0x00005048      0x494 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x000045d0      0x494 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .text.ClockSync_CalculateBrr
-                0x000054dc      0x36c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00004a64      0x36c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .text.SmartCard_CalculateBrr
-                0x00005848      0x45c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00004dd0      0x45c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .text.USART_GetBusClockFreq
-                0x00005ca4       0x34 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x0000522c       0x34 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .text.USART_GetUsartClockFreq
-                0x00005cd8       0x94 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00005260       0x94 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .text.USART_UART_StructInit
-                0x00005d6c       0x6c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x00005d6c                USART_UART_StructInit
+                0x000052f4       0x6c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x000052f4                USART_UART_StructInit
  .text.USART_UART_Init
-                0x00005dd8      0x220 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x00005dd8                USART_UART_Init
+                0x00005360      0x220 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00005360                USART_UART_Init
  .text.USART_DeInit
-                0x00005ff8       0xec ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x00005ff8                USART_DeInit
+                0x00005580       0xec ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00005580                USART_DeInit
  .text.USART_FuncCmd
-                0x000060e4      0x188 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x000060e4                USART_FuncCmd
+                0x0000566c      0x188 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x0000566c                USART_FuncCmd
  .text.USART_GetStatus
-                0x0000626c       0x80 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x0000626c                USART_GetStatus
+                0x000057f4       0x80 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x000057f4                USART_GetStatus
  .text.USART_ClearStatus
-                0x000062ec       0xf8 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x000062ec                USART_ClearStatus
+                0x00005874       0xf8 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00005874                USART_ClearStatus
  .text.USART_ReadData
-                0x000063e4       0x54 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x000063e4                USART_ReadData
+                0x0000596c       0x54 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x0000596c                USART_ReadData
  .text.USART_WriteData
-                0x00006438       0x6c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x00006438                USART_WriteData
+                0x000059c0       0x6c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x000059c0                USART_WriteData
  .text.USART_SetBaudrate
-                0x000064a4      0x120 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
-                0x000064a4                USART_SetBaudrate
+                0x00005a2c      0x120 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00005a2c                USART_SetBaudrate
  .text.DDL_DelayUS
-                0x000065c4       0x64 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
-                0x000065c4                DDL_DelayUS
+                0x00005b4c       0x64 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+                0x00005b4c                DDL_DelayUS
  .text.DDL_AssertHandler
-                0x00006628        0xe ./build/Debug/.obj/driver/src/hc32_ll_utility.o
-                0x00006628                DDL_AssertHandler
- *fill*         0x00006636        0x2 
+                0x00005bb0        0xe ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+                0x00005bb0                DDL_AssertHandler
+ *fill*         0x00005bbe        0x2 
  .text.__NVIC_EnableIRQ
-                0x00006638       0x38 ./build/Debug/.obj/source/main.o
+                0x00005bc0       0x38 ./build/Debug/.obj/source/main.o
  .text.__NVIC_ClearPendingIRQ
-                0x00006670       0x3c ./build/Debug/.obj/source/main.o
+                0x00005bf8       0x3c ./build/Debug/.obj/source/main.o
  .text.__NVIC_SetPriority
-                0x000066ac       0x54 ./build/Debug/.obj/source/main.o
- .text.main     0x00006700       0xac ./build/Debug/.obj/source/main.o
-                0x00006700                main
+                0x00005c34       0x54 ./build/Debug/.obj/source/main.o
+ .text.main     0x00005c88       0xa4 ./build/Debug/.obj/source/main.o
+                0x00005c88                main
  .text.Log_SendString
-                0x000067ac       0x58 ./build/Debug/.obj/source/main.o
+                0x00005d2c       0x58 ./build/Debug/.obj/source/main.o
  .text.Delay_ms
-                0x00006804       0x3e ./build/Debug/.obj/source/main.o
- *fill*         0x00006842        0x2 
+                0x00005d84       0x3e ./build/Debug/.obj/source/main.o
+ *fill*         0x00005dc2        0x2 
  .text.debug_output
-                0x00006844       0xf8 ./build/Debug/.obj/source/main.o
+                0x00005dc4       0xf4 ./build/Debug/.obj/source/main.o
  .text.App_PortCfg
-                0x0000693c       0x6e ./build/Debug/.obj/source/main.o
- *fill*         0x000069aa        0x2 
+                0x00005eb8       0x6e ./build/Debug/.obj/source/main.o
+ *fill*         0x00005f26        0x2 
  .text.App_Tmra2Cfg
-                0x000069ac       0x74 ./build/Debug/.obj/source/main.o
+                0x00005f28       0x74 ./build/Debug/.obj/source/main.o
  .text.App_USARTxCfg
-                0x00006a20       0x90 ./build/Debug/.obj/source/main.o
+                0x00005f9c       0x90 ./build/Debug/.obj/source/main.o
  .text.TMRA_2_Ovf_Udf_Handler
-                0x00006ab0       0xcc ./build/Debug/.obj/source/main.o
-                0x00006ab0                TMRA_2_Ovf_Udf_Handler
+                0x0000602c       0xcc ./build/Debug/.obj/source/main.o
+                0x0000602c                TMRA_2_Ovf_Udf_Handler
  .text.__udivmoddi4
-                0x00006b7c      0x320 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x00006b7c                __udivmoddi4
+                0x000060f8      0x320 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x000060f8                __udivmoddi4
  .text.snprintf
-                0x00006e9c       0x64 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
-                0x00006e9c                sniprintf
-                0x00006e9c                snprintf
- .text.memset   0x00006f00       0x10 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x00006f00                memset
+                0x00006418       0x64 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
+                0x00006418                sniprintf
+                0x00006418                snprintf
+ .text.memset   0x0000647c       0x10 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x0000647c                memset
  .text.__libc_init_array
-                0x00006f10       0x48 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x00006f10                __libc_init_array
+                0x0000648c       0x48 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x0000648c                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x00006f58        0x2 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x00006f58                __retarget_lock_acquire_recursive
+                0x000064d4        0x2 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x000064d4                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x00006f5a        0x2 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x00006f5a                __retarget_lock_release_recursive
- .text._free_r  0x00006f5c       0x98 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
-                0x00006f5c                _free_r
+                0x000064d6        0x2 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x000064d6                __retarget_lock_release_recursive
+ .text._free_r  0x000064d8       0x98 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x000064d8                _free_r
  .text.sbrk_aligned
-                0x00006ff4       0x44 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00006570       0x44 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x00007038       0xf8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x00007038                _malloc_r
+                0x000065b4       0xf8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x000065b4                _malloc_r
  .text.__malloc_lock
-                0x00007130        0xc C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x00007130                __malloc_lock
+                0x000066ac        0xc C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x000066ac                __malloc_lock
  .text.__malloc_unlock
-                0x0000713c        0xc C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x0000713c                __malloc_unlock
+                0x000066b8        0xc C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x000066b8                __malloc_unlock
  .text.__ssputs_r
-                0x00007148       0xc0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
-                0x00007148                __ssputs_r
+                0x000066c4       0xc0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x000066c4                __ssputs_r
  .text._svfprintf_r
-                0x00007208      0x1f0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
-                0x00007208                _svfiprintf_r
-                0x00007208                _svfprintf_r
+                0x00006784      0x1f0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x00006784                _svfiprintf_r
+                0x00006784                _svfprintf_r
  .text._printf_common
-                0x000073f8       0xea C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x000073f8                _printf_common
- *fill*         0x000074e2        0x2 
+                0x00006974       0xea C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x00006974                _printf_common
+ *fill*         0x00006a5e        0x2 
  .text._printf_i
-                0x000074e4      0x254 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
-                0x000074e4                _printf_i
- .text.memmove  0x00007738       0x32 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
-                0x00007738                memmove
- *fill*         0x0000776a        0x2 
- .text._sbrk_r  0x0000776c       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
-                0x0000776c                _sbrk_r
- .text.memcpy   0x0000778c       0x1c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
-                0x0000778c                memcpy
+                0x00006a60      0x254 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x00006a60                _printf_i
+ .text.memmove  0x00006cb4       0x32 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
+                0x00006cb4                memmove
+ *fill*         0x00006ce6        0x2 
+ .text._sbrk_r  0x00006ce8       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
+                0x00006ce8                _sbrk_r
+ .text.memcpy   0x00006d08       0x1c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x00006d08                memcpy
  .text._realloc_r
-                0x000077a8       0x5c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
-                0x000077a8                _realloc_r
+                0x00006d24       0x5c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
+                0x00006d24                _realloc_r
  .text._malloc_usable_size_r
-                0x00007804       0x10 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
-                0x00007804                _malloc_usable_size_r
+                0x00006d80       0x10 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
+                0x00006d80                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x00007814        0x0 linker stubs
+ .glue_7        0x00006d90        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x00007814        0x0 linker stubs
+ .glue_7t       0x00006d90        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x00007814        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x00006d90        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x00007814        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x00007814                _init
- .init          0x00007818        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x00006d90        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x00006d90                _init
+ .init          0x00006d94        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x00007820        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x00007820                _fini
- .fini          0x00007824        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0000782c                        . = ALIGN (0x4)
+ .fini          0x00006d9c        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x00006d9c                _fini
+ .fini          0x00006da0        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00006da8                        . = ALIGN (0x4)
 
-.vfp11_veneer   0x0000782c        0x0
- .vfp11_veneer  0x0000782c        0x0 linker stubs
+.vfp11_veneer   0x00006da8        0x0
+ .vfp11_veneer  0x00006da8        0x0 linker stubs
 
-.v4_bx          0x0000782c        0x0
- .v4_bx         0x0000782c        0x0 linker stubs
+.v4_bx          0x00006da8        0x0
+ .v4_bx         0x00006da8        0x0 linker stubs
 
-.iplt           0x0000782c        0x0
- .iplt          0x0000782c        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x00006da8        0x0
+ .iplt          0x00006da8        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000782c      0x354
-                0x0000782c                        . = ALIGN (0x4)
+.rodata         0x00006da8      0x2b4
+                0x00006da8                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000782c       0x1b ./build/Debug/.obj/PSFB/psfb.o
- *fill*         0x00007847        0x1 
- .rodata        0x00007848       0x1b ./build/Debug/.obj/driver/src/hc32_ll_adc.o
- *fill*         0x00007863        0x1 
- .rodata        0x00007864       0x1b ./build/Debug/.obj/driver/src/hc32_ll_aos.o
- *fill*         0x0000787f        0x1 
- .rodata        0x00007880       0x1b ./build/Debug/.obj/driver/src/hc32_ll_clk.o
- *fill*         0x0000789b        0x1 
- .rodata        0x0000789c       0x1b ./build/Debug/.obj/driver/src/hc32_ll_dma.o
- *fill*         0x000078b7        0x1 
- .rodata        0x000078b8       0x1b ./build/Debug/.obj/driver/src/hc32_ll_efm.o
- *fill*         0x000078d3        0x1 
- .rodata        0x000078d4       0x1b ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
- *fill*         0x000078ef        0x1 
- .rodata        0x000078f0       0x1c ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .rodata        0x0000790c       0x39 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
- *fill*         0x00007945        0x3 
- .rodata        0x00007948       0x22 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
- *fill*         0x0000796a        0x2 
- .rodata        0x0000796c       0x23 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- *fill*         0x0000798f        0x1 
- .rodata        0x00007990       0x40 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .rodata        0x000079d0      0x17c ./build/Debug/.obj/source/main.o
+ .rodata        0x00006da8       0x1b ./build/Debug/.obj/PSFB/psfb.o
+ *fill*         0x00006dc3        0x1 
+ .rodata        0x00006dc4       0x1b ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ *fill*         0x00006ddf        0x1 
+ .rodata        0x00006de0       0x1b ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ *fill*         0x00006dfb        0x1 
+ .rodata        0x00006dfc       0x1b ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ *fill*         0x00006e17        0x1 
+ .rodata        0x00006e18       0x1c ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .rodata        0x00006e34       0x39 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ *fill*         0x00006e6d        0x3 
+ .rodata        0x00006e70       0x22 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ *fill*         0x00006e92        0x2 
+ .rodata        0x00006e94       0x23 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ *fill*         0x00006eb7        0x1 
+ .rodata        0x00006eb8       0x40 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .rodata        0x00006ef8      0x130 ./build/Debug/.obj/source/main.o
  *(.rodata*)
  .rodata._svfprintf_r.str1.1
-                0x00007b4c       0x33 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x00007028       0x33 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
                                  0x11 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x00007b7f        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x0000705b        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
                                  0x22 (size before relaxing)
-                0x00007b80                        . = ALIGN (0x4)
- *fill*         0x00007b7f        0x1 
+                0x0000705c                        . = ALIGN (0x4)
+ *fill*         0x0000705b        0x1 
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00007b80                        __exidx_start = .
+                0x0000705c                        __exidx_start = .
 
-.ARM.exidx      0x00007b80        0x8
+.ARM.exidx      0x0000705c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00007b80        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x0000705c        0x8 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
  .ARM.exidx.text.__udivmoddi4
-                0x00007b88        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00007064        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x00007b88                        __exidx_end = .
+                0x00007064                        __exidx_end = .
 
-.rel.dyn        0x00007b88        0x0
- .rel.iplt      0x00007b88        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x00007064        0x0
+ .rel.iplt      0x00007064        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x00007b88        0x0
-                0x00007b88                        . = ALIGN (0x4)
-                0x00007b88                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x00007064        0x0
+                0x00007064                        . = ALIGN (0x4)
+                0x00007064                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x00007b88                        PROVIDE (__preinit_array_end = .)
-                0x00007b88                        . = ALIGN (0x4)
+                0x00007064                        PROVIDE (__preinit_array_end = .)
+                0x00007064                        . = ALIGN (0x4)
 
-.init_array     0x00007b88        0x4
-                0x00007b88                        . = ALIGN (0x4)
-                0x00007b88                        PROVIDE (__init_array_start = .)
+.init_array     0x00007064        0x4
+                0x00007064                        . = ALIGN (0x4)
+                0x00007064                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x00007b88        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x00007b8c                        PROVIDE (__init_array_end = .)
-                0x00007b8c                        . = ALIGN (0x4)
+ .init_array    0x00007064        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x00007068                        PROVIDE (__init_array_end = .)
+                0x00007068                        . = ALIGN (0x4)
 
-.fini_array     0x00007b8c        0x4
-                0x00007b8c                        . = ALIGN (0x4)
+.fini_array     0x00007068        0x4
+                0x00007068                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x00007b8c        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x00007068        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x00007b90                        . = ALIGN (0x4)
-                0x00007b90                        __etext = ALIGN (0x4)
+                0x0000706c                        . = ALIGN (0x4)
+                0x0000706c                        __etext = ALIGN (0x4)
 
 .otp_data       0x03000c00       0x40
                 0x03000c00                        . = ALIGN (0x4)
@@ -2016,43 +2044,41 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
  *(.otp_b2_lock*)
                 0x03000ac4                        . = ALIGN (0x4)
 
-.data           0x1fffc000       0x5c load address 0x00007b90
+.data           0x1fffc000       0x58 load address 0x0000706c
                 0x1fffc000                        . = ALIGN (0x4)
                 0x1fffc000                        __data_start__ = .
  *(vtable)
  *(.data)
  *(.data*)
- .data.phaseCnt
-                0x1fffc000        0x4 ./build/Debug/.obj/PSFB/psfb.o
  .data.curbrk.0
-                0x1fffc004        0x4 ./build/Debug/.obj/common/syscalls.o
+                0x1fffc000        0x4 ./build/Debug/.obj/common/syscalls.o
  .data.u8LastSec.0
-                0x1fffc008        0x1 ./build/Debug/.obj/source/main.o
- *fill*         0x1fffc009        0x3 
+                0x1fffc004        0x1 ./build/Debug/.obj/source/main.o
+ *fill*         0x1fffc005        0x3 
  .data._impure_ptr
-                0x1fffc00c        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
-                0x1fffc00c                _impure_ptr
+                0x1fffc008        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
+                0x1fffc008                _impure_ptr
  .data._impure_data
-                0x1fffc010       0x4c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
-                0x1fffc010                _impure_data
-                0x1fffc05c                        . = ALIGN (0x4)
+                0x1fffc00c       0x4c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
+                0x1fffc00c                _impure_data
+                0x1fffc058                        . = ALIGN (0x4)
  *(.ramfunc)
  *(.ramfunc*)
-                0x1fffc05c                        . = ALIGN (0x4)
-                0x1fffc05c                        __data_end__ = .
-                0x00007bec                        __etext_ramb = (__etext + ALIGN (SIZEOF (.data), 0x4))
+                0x1fffc058                        . = ALIGN (0x4)
+                0x1fffc058                        __data_end__ = .
+                0x000070c4                        __etext_ramb = (__etext + ALIGN (SIZEOF (.data), 0x4))
 
 .tm_clone_table
-                0x1fffc05c        0x0 load address 0x00007bec
+                0x1fffc058        0x0 load address 0x000070c4
  .tm_clone_table
-                0x1fffc05c        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x1fffc058        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .tm_clone_table
-                0x1fffc05c        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
+                0x1fffc058        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
 
-.igot.plt       0x1fffc05c        0x0 load address 0x00007bec
- .igot.plt      0x1fffc05c        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.igot.plt       0x1fffc058        0x0 load address 0x000070c4
+ .igot.plt      0x1fffc058        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ramb_data      0x200f0000        0x0 load address 0x00007bec
+.ramb_data      0x200f0000        0x0 load address 0x000070c4
                 0x200f0000                        . = ALIGN (0x4)
                 0x200f0000                        __data_start_ramb__ = .
  *(.ramb_data)
@@ -2060,47 +2086,44 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
                 0x200f0000                        . = ALIGN (0x4)
                 0x200f0000                        __data_end_ramb__ = .
 
-.bss            0x1fffc05c      0x1dc load address 0x00007bec
-                0x1fffc05c                        . = ALIGN (0x4)
-                0x1fffc05c                        _sbss = .
-                0x1fffc05c                        __bss_start__ = _sbss
+.bss            0x1fffc058      0x1bc load address 0x000070c4
+                0x1fffc058                        . = ALIGN (0x4)
+                0x1fffc058                        _sbss = .
+                0x1fffc058                        __bss_start__ = _sbss
  *(.bss)
  *(.bss*)
  .bss.completed.1
-                0x1fffc05c        0x1 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- *fill*         0x1fffc05d        0x3 
- .bss.object.0  0x1fffc060       0x18 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- .bss.isenseDmaBuf
-                0x1fffc078       0x20 ./build/Debug/.obj/PSFB/psfb.o
-                0x1fffc078                isenseDmaBuf
+                0x1fffc058        0x1 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x1fffc059        0x3 
+ .bss.object.0  0x1fffc05c       0x18 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .bss.m_apfnIrqHandler
-                0x1fffc098       0x40 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x1fffc074       0x40 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
  .bss.m_stcTime
-                0x1fffc0d8       0x10 ./build/Debug/.obj/source/main.o
- .bss.__sf      0x1fffc0e8      0x138 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
-                0x1fffc0e8                __sf
- .bss.errno     0x1fffc220        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
-                0x1fffc220                errno
+                0x1fffc0b4       0x10 ./build/Debug/.obj/source/main.o
+ .bss.__sf      0x1fffc0c4      0x138 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
+                0x1fffc0c4                __sf
+ .bss.errno     0x1fffc1fc        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+                0x1fffc1fc                errno
  .bss.__lock___malloc_recursive_mutex
-                0x1fffc224        0x1 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x1fffc224                __lock___malloc_recursive_mutex
- *fill*         0x1fffc225        0x3 
+                0x1fffc200        0x1 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x1fffc200                __lock___malloc_recursive_mutex
+ *fill*         0x1fffc201        0x3 
  .bss.__malloc_sbrk_start
-                0x1fffc228        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x1fffc228                __malloc_sbrk_start
+                0x1fffc204        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x1fffc204                __malloc_sbrk_start
  .bss.__malloc_free_list
-                0x1fffc22c        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x1fffc22c                __malloc_free_list
+                0x1fffc208        0x4 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x1fffc208                __malloc_free_list
  *(COMMON)
-                0x1fffc230                        . = ALIGN (0x4)
-                0x1fffc230                        _ebss = .
-                0x1fffc230                        __bss_end__ = _ebss
-                0x1fffc230                        . = ALIGN (0x4)
+                0x1fffc20c                        . = ALIGN (0x4)
+                0x1fffc20c                        _ebss = .
+                0x1fffc20c                        __bss_end__ = _ebss
+                0x1fffc20c                        . = ALIGN (0x4)
  *(.noinit*)
- .noinit        0x1fffc230        0x8 ./build/Debug/.obj/common/system_hc32f334.o
-                0x1fffc230                SystemCoreClock
-                0x1fffc234                HRC_VALUE
-                0x1fffc238                        . = ALIGN (0x4)
+ .noinit        0x1fffc20c        0x8 ./build/Debug/.obj/common/system_hc32f334.o
+                0x1fffc20c                SystemCoreClock
+                0x1fffc210                HRC_VALUE
+                0x1fffc214                        . = ALIGN (0x4)
 
 .ramb_bss       0x200f0000        0x0
                 0x200f0000                        . = ALIGN (0x4)
@@ -2110,21 +2133,21 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
                 0x200f0000                        . = ALIGN (0x4)
                 0x200f0000                        __bss_end_ramb__ = .
 
-.heap_stack     0x1fffc238     0x2000
-                0x1fffc238                        . = ALIGN (0x8)
-                0x1fffc238                        __end__ = .
+.heap_stack     0x1fffc218     0x2000
+                0x1fffc218                        . = ALIGN (0x8)
+                0x1fffc218                        __end__ = .
                 [!provide]                        PROVIDE (end = .)
-                0x1fffc238                        PROVIDE (_end = .)
+                0x1fffc218                        PROVIDE (_end = .)
  *(.heap*)
- .heap          0x1fffc238     0x1000 ./build/Debug/.obj/GCC/startup_hc32f334.o
-                0x1fffc238                __HeapBase
-                0x1fffd238                        . = ALIGN (0x8)
-                0x1fffd238                        __HeapLimit = .
-                0x1fffd238                        __StackLimit = .
+ .heap          0x1fffc218     0x1000 ./build/Debug/.obj/GCC/startup_hc32f334.o
+                0x1fffc218                __HeapBase
+                0x1fffd218                        . = ALIGN (0x8)
+                0x1fffd218                        __HeapLimit = .
+                0x1fffd218                        __StackLimit = .
  *(.stack*)
- .stack         0x1fffd238     0x1000 ./build/Debug/.obj/GCC/startup_hc32f334.o
-                0x1fffe238                        . = ALIGN (0x8)
-                0x1fffe238                        __StackTop = .
+ .stack         0x1fffd218     0x1000 ./build/Debug/.obj/GCC/startup_hc32f334.o
+                0x1fffe218                        . = ALIGN (0x8)
+                0x1fffe218                        __StackTop = .
 
 /DISCARD/
  libc.a(*)
@@ -2149,89 +2172,83 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
  .ARM.attributes
                 0x00000113       0x34 ./build/Debug/.obj/driver/src/hc32_ll.o
  .ARM.attributes
-                0x00000147       0x34 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+                0x00000147       0x34 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .ARM.attributes
-                0x0000017b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+                0x0000017b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
  .ARM.attributes
-                0x000001af       0x34 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000001af       0x34 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .ARM.attributes
-                0x000001e3       0x34 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+                0x000001e3       0x34 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .ARM.attributes
-                0x00000217       0x34 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+                0x00000217       0x34 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .ARM.attributes
-                0x0000024b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+                0x0000024b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
  .ARM.attributes
-                0x0000027f       0x34 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x0000027f       0x34 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
  .ARM.attributes
-                0x000002b3       0x34 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x000002b3       0x34 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
  .ARM.attributes
-                0x000002e7       0x34 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+                0x000002e7       0x34 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .ARM.attributes
-                0x0000031b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x0000031b       0x34 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
  .ARM.attributes
-                0x0000034f       0x34 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+                0x0000034f       0x34 ./build/Debug/.obj/source/main.o
  .ARM.attributes
-                0x00000383       0x34 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+                0x00000383       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x000003b7       0x34 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+                0x000003a5       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x000003eb       0x34 ./build/Debug/.obj/source/main.o
+                0x000003c7       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x0000041f       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                0x000003e9       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000441       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+                0x0000040b       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x00000463       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+                0x0000043f       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000485       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x00000461       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
  .ARM.attributes
-                0x000004a7       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00000495       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
  .ARM.attributes
-                0x000004db       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x000004c9       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x000004fd       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
+                0x000004fd       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
  .ARM.attributes
-                0x00000531       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
+                0x00000531       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
  .ARM.attributes
-                0x00000565       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x00000565       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x00000599       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+                0x00000599       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
  .ARM.attributes
-                0x000005cd       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
+                0x000005cd       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
  .ARM.attributes
-                0x00000601       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x00000601       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .ARM.attributes
-                0x00000635       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x00000635       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
  .ARM.attributes
-                0x00000669       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x00000669       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
  .ARM.attributes
-                0x0000069d       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x0000069d       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
  .ARM.attributes
-                0x000006d1       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x000006d1       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
  .ARM.attributes
-                0x00000705       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+                0x00000705       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
  .ARM.attributes
-                0x00000739       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+                0x00000739       0x1c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
  .ARM.attributes
-                0x0000076d       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
+                0x00000755       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
  .ARM.attributes
-                0x000007a1       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
+                0x00000789       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
  .ARM.attributes
-                0x000007d5       0x1c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
+                0x000007bd       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
  .ARM.attributes
-                0x000007f1       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x000007f1       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
  .ARM.attributes
-                0x00000825       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
- .ARM.attributes
-                0x00000859       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
- .ARM.attributes
-                0x0000088d       0x34 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtend.o
- .ARM.attributes
-                0x000008c1       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000825       0x22 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/crtn.o
                 [!provide]                        PROVIDE (_stack = __StackTop)
                 [!provide]                        PROVIDE (_Min_Heap_Size = (__HeapLimit - __HeapBase))
                 [!provide]                        PROVIDE (_Min_Stack_Size = (__StackTop - __StackLimit))
-                0x1fffd238                        PROVIDE (_heap_end = __HeapLimit)
+                0x1fffd218                        PROVIDE (_heap_end = __HeapLimit)
                 0x20004000                        __RamEnd = (ORIGIN (RAM) + LENGTH (RAM))
                 0x00000001                        ASSERT ((__StackTop <= __RamEnd), region RAM overflowed with stack)
 OUTPUT(./build/Debug/XHCODE.elf elf32-littlearm)
@@ -2240,26 +2257,23 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/.
 LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_line     0x00000000     0xb0c0
+.debug_line     0x00000000     0x952b
  .debug_line    0x00000000       0x94 ./build/Debug/.obj/GCC/startup_hc32f334.o
- .debug_line    0x00000094      0x767 ./build/Debug/.obj/PSFB/psfb.o
- .debug_line    0x000007fb      0x388 ./build/Debug/.obj/common/syscalls.o
- .debug_line    0x00000b83      0x275 ./build/Debug/.obj/common/system_hc32f334.o
- .debug_line    0x00000df8      0x352 ./build/Debug/.obj/driver/src/hc32_ll.o
- .debug_line    0x0000114a      0xcda ./build/Debug/.obj/driver/src/hc32_ll_adc.o
- .debug_line    0x00001e24      0x1e0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
- .debug_line    0x00002004      0xe82 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
- .debug_line    0x00002e86      0xd30 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
- .debug_line    0x00003bb6     0x111b ./build/Debug/.obj/driver/src/hc32_ll_efm.o
- .debug_line    0x00004cd1      0x222 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
- .debug_line    0x00004ef3      0xa22 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .debug_line    0x00005915     0x1cca ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
- .debug_line    0x000075df       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
- .debug_line    0x000076bf      0x997 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
- .debug_line    0x00008056      0xe18 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_line    0x00008e6e     0x1a5b ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_line    0x0000a8c9      0x329 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_line    0x0000abf2      0x4ce ./build/Debug/.obj/source/main.o
+ .debug_line    0x00000094      0x7bf ./build/Debug/.obj/PSFB/psfb.o
+ .debug_line    0x00000853      0x388 ./build/Debug/.obj/common/syscalls.o
+ .debug_line    0x00000bdb      0x275 ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_line    0x00000e50      0x352 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_line    0x000011a2      0xe82 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_line    0x00002024     0x111b ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_line    0x0000313f      0x222 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_line    0x00003361      0xa22 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_line    0x00003d83     0x1cca ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_line    0x00005a4d       0xe0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+ .debug_line    0x00005b2d      0x997 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_line    0x000064c4      0xe18 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_line    0x000072dc     0x1a5b ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_line    0x00008d37      0x329 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_line    0x00009060      0x4cb ./build/Debug/.obj/source/main.o
 
 .debug_line_str
                 0x00000000      0x224
@@ -2285,166 +2299,142 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
                 0x00000224        0x0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
                                  0xe5 (size before relaxing)
 
-.debug_info     0x00000000    0x198ba
+.debug_info     0x00000000    0x14a83
  .debug_info    0x00000000       0x30 ./build/Debug/.obj/GCC/startup_hc32f334.o
- .debug_info    0x00000030     0x2d12 ./build/Debug/.obj/PSFB/psfb.o
- .debug_info    0x00002d42      0x77d ./build/Debug/.obj/common/syscalls.o
- .debug_info    0x000034bf      0xe56 ./build/Debug/.obj/common/system_hc32f334.o
- .debug_info    0x00004315     0x1143 ./build/Debug/.obj/driver/src/hc32_ll.o
- .debug_info    0x00005458     0x1a54 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
- .debug_info    0x00006eac     0x1086 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
- .debug_info    0x00007f32     0x14d1 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
- .debug_info    0x00009403     0x2392 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
- .debug_info    0x0000b795     0x1ce5 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
- .debug_info    0x0000d47a      0x568 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
- .debug_info    0x0000d9e2     0x14e0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .debug_info    0x0000eec2     0x1ff2 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
- .debug_info    0x00010eb4       0xb7 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
- .debug_info    0x00010f6b     0x1d7b ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
- .debug_info    0x00012ce6     0x18c7 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_info    0x000145ad     0x25af ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_info    0x00016b5c      0xe23 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_info    0x0001797f     0x1f3b ./build/Debug/.obj/source/main.o
+ .debug_info    0x00000030     0x2d47 ./build/Debug/.obj/PSFB/psfb.o
+ .debug_info    0x00002d77      0x77d ./build/Debug/.obj/common/syscalls.o
+ .debug_info    0x000034f4      0xe56 ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_info    0x0000434a     0x1143 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_info    0x0000548d     0x14d1 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_info    0x0000695e     0x1ce5 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_info    0x00008643      0x568 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_info    0x00008bab     0x14e0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_info    0x0000a08b     0x1ff2 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_info    0x0000c07d       0xb7 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+ .debug_info    0x0000c134     0x1d7b ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_info    0x0000deaf     0x18c7 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_info    0x0000f776     0x25af ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_info    0x00011d25      0xe23 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_info    0x00012b48     0x1f3b ./build/Debug/.obj/source/main.o
 
-.debug_abbrev   0x00000000     0x2579
+.debug_abbrev   0x00000000     0x2041
  .debug_abbrev  0x00000000       0x24 ./build/Debug/.obj/GCC/startup_hc32f334.o
- .debug_abbrev  0x00000024      0x387 ./build/Debug/.obj/PSFB/psfb.o
- .debug_abbrev  0x000003ab      0x1a5 ./build/Debug/.obj/common/syscalls.o
- .debug_abbrev  0x00000550      0x21d ./build/Debug/.obj/common/system_hc32f334.o
- .debug_abbrev  0x0000076d      0x172 ./build/Debug/.obj/driver/src/hc32_ll.o
- .debug_abbrev  0x000008df      0x1bc ./build/Debug/.obj/driver/src/hc32_ll_adc.o
- .debug_abbrev  0x00000a9b      0x15f ./build/Debug/.obj/driver/src/hc32_ll_aos.o
- .debug_abbrev  0x00000bfa      0x286 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
- .debug_abbrev  0x00000e80      0x23b ./build/Debug/.obj/driver/src/hc32_ll_dma.o
- .debug_abbrev  0x000010bb      0x2a1 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
- .debug_abbrev  0x0000135c      0x12d ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
- .debug_abbrev  0x00001489      0x1bd ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .debug_abbrev  0x00001646      0x2b4 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
- .debug_abbrev  0x000018fa       0x61 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
- .debug_abbrev  0x0000195b      0x2f9 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
- .debug_abbrev  0x00001c54      0x1cc ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_abbrev  0x00001e20      0x23c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_abbrev  0x0000205c      0x252 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_abbrev  0x000022ae      0x2cb ./build/Debug/.obj/source/main.o
+ .debug_abbrev  0x00000024      0x3a5 ./build/Debug/.obj/PSFB/psfb.o
+ .debug_abbrev  0x000003c9      0x1a5 ./build/Debug/.obj/common/syscalls.o
+ .debug_abbrev  0x0000056e      0x21d ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_abbrev  0x0000078b      0x172 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_abbrev  0x000008fd      0x286 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_abbrev  0x00000b83      0x2a1 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_abbrev  0x00000e24      0x12d ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_abbrev  0x00000f51      0x1bd ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_abbrev  0x0000110e      0x2b4 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_abbrev  0x000013c2       0x61 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+ .debug_abbrev  0x00001423      0x2f9 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_abbrev  0x0000171c      0x1cc ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_abbrev  0x000018e8      0x23c ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_abbrev  0x00001b24      0x252 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_abbrev  0x00001d76      0x2cb ./build/Debug/.obj/source/main.o
 
-.debug_aranges  0x00000000     0x1198
+.debug_aranges  0x00000000      0xe78
  .debug_aranges
                 0x00000000       0x28 ./build/Debug/.obj/GCC/startup_hc32f334.o
  .debug_aranges
-                0x00000028      0x100 ./build/Debug/.obj/PSFB/psfb.o
+                0x00000028      0x110 ./build/Debug/.obj/PSFB/psfb.o
  .debug_aranges
-                0x00000128       0xb8 ./build/Debug/.obj/common/syscalls.o
+                0x00000138       0xb8 ./build/Debug/.obj/common/syscalls.o
  .debug_aranges
-                0x000001e0       0x28 ./build/Debug/.obj/common/system_hc32f334.o
+                0x000001f0       0x28 ./build/Debug/.obj/common/system_hc32f334.o
  .debug_aranges
-                0x00000208       0x90 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x00000218       0x90 ./build/Debug/.obj/driver/src/hc32_ll.o
  .debug_aranges
-                0x00000298      0x148 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+                0x000002a8      0x158 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .debug_aranges
-                0x000003e0       0x30 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+                0x00000400      0x1c0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
  .debug_aranges
-                0x00000410      0x158 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x000005c0       0x38 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .debug_aranges
-                0x00000568      0x1b8 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+                0x000005f8       0xd0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .debug_aranges
-                0x00000720      0x1c0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+                0x000006c8      0x200 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .debug_aranges
-                0x000008e0       0x38 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+                0x000008c8       0x18 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
  .debug_aranges
-                0x00000918       0xd0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x000008e0      0x150 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
  .debug_aranges
-                0x000009e8      0x200 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x00000a30      0x148 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
  .debug_aranges
-                0x00000be8       0x18 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+                0x00000b78      0x220 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .debug_aranges
-                0x00000c00      0x150 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00000d98       0x70 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
  .debug_aranges
-                0x00000d50      0x148 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_aranges
-                0x00000e98      0x220 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_aranges
-                0x000010b8       0x70 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_aranges
-                0x00001128       0x70 ./build/Debug/.obj/source/main.o
+                0x00000e08       0x70 ./build/Debug/.obj/source/main.o
 
-.debug_str      0x00000000     0x9eab
- .debug_str     0x00000000     0x9eab ./build/Debug/.obj/GCC/startup_hc32f334.o
+.debug_str      0x00000000     0x9320
+ .debug_str     0x00000000     0x9320 ./build/Debug/.obj/GCC/startup_hc32f334.o
                                  0x75 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/PSFB/psfb.o
-                               0x2e8b (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/common/syscalls.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/PSFB/psfb.o
+                               0x2ec0 (size before relaxing)
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/common/syscalls.o
                                 0x485 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/common/system_hc32f334.o
                                 0x867 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll.o
                                 0x9cb (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                                0xc5d (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
-                               0x1dcc (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
                                 0xb25 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
-                               0x1120 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
                                 0xee0 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
                                 0x48f (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
                                 0xb8a (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
                                0x144e (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_icg.o
                                 0x1db (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
                                0x2ca3 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
                                 0xba9 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
                                0x1131 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
                                0x10d4 (size before relaxing)
- .debug_str     0x00009eab        0x0 ./build/Debug/.obj/source/main.o
+ .debug_str     0x00009320        0x0 ./build/Debug/.obj/source/main.o
                                0x2d9c (size before relaxing)
 
 .debug_rnglists
-                0x00000000      0xd9f
+                0x00000000      0xb2f
  .debug_rnglists
                 0x00000000       0x1a ./build/Debug/.obj/GCC/startup_hc32f334.o
  .debug_rnglists
-                0x0000001a       0xc2 ./build/Debug/.obj/PSFB/psfb.o
+                0x0000001a       0xce ./build/Debug/.obj/PSFB/psfb.o
  .debug_rnglists
-                0x000000dc       0x85 ./build/Debug/.obj/common/syscalls.o
+                0x000000e8       0x85 ./build/Debug/.obj/common/syscalls.o
  .debug_rnglists
-                0x00000161       0x1b ./build/Debug/.obj/common/system_hc32f334.o
+                0x0000016d       0x1b ./build/Debug/.obj/common/system_hc32f334.o
  .debug_rnglists
-                0x0000017c       0x67 ./build/Debug/.obj/driver/src/hc32_ll.o
+                0x00000188       0x67 ./build/Debug/.obj/driver/src/hc32_ll.o
  .debug_rnglists
-                0x000001e3      0x10a ./build/Debug/.obj/driver/src/hc32_ll_adc.o
+                0x000001ef      0x113 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
  .debug_rnglists
-                0x000002ed       0x20 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
+                0x00000302      0x15f ./build/Debug/.obj/driver/src/hc32_ll_efm.o
  .debug_rnglists
-                0x0000030d      0x113 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+                0x00000461       0x26 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
  .debug_rnglists
-                0x00000420      0x152 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
+                0x00000487       0xa4 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
  .debug_rnglists
-                0x00000572      0x15f ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+                0x0000052b      0x1a1 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
  .debug_rnglists
-                0x000006d1       0x26 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+                0x000006cc       0xfa ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
  .debug_rnglists
-                0x000006f7       0xa4 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+                0x000007c6      0x10b ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
  .debug_rnglists
-                0x0000079b      0x1a1 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+                0x000008d1      0x1bc ./build/Debug/.obj/driver/src/hc32_ll_usart.o
  .debug_rnglists
-                0x0000093c       0xfa ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+                0x00000a8d       0x4f ./build/Debug/.obj/driver/src/hc32_ll_utility.o
  .debug_rnglists
-                0x00000a36      0x10b ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_rnglists
-                0x00000b41      0x1bc ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_rnglists
-                0x00000cfd       0x4f ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_rnglists
-                0x00000d4c       0x53 ./build/Debug/.obj/source/main.o
+                0x00000adc       0x53 ./build/Debug/.obj/source/main.o
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 ./build/Debug/.obj/PSFB/psfb.o
@@ -2455,13 +2445,7 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
                                  0x46 (size before relaxing)
  .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll.o
                                  0x46 (size before relaxing)
- .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll_adc.o
-                                 0x46 (size before relaxing)
- .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll_aos.o
-                                 0x46 (size before relaxing)
  .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
-                                 0x46 (size before relaxing)
- .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
                                  0x46 (size before relaxing)
  .comment       0x00000045        0x0 ./build/Debug/.obj/driver/src/hc32_ll_efm.o
                                  0x46 (size before relaxing)
@@ -2484,43 +2468,40 @@ LOAD C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/t
  .comment       0x00000045        0x0 ./build/Debug/.obj/source/main.o
                                  0x46 (size before relaxing)
 
-.debug_frame    0x00000000     0x4fe8
- .debug_frame   0x00000000      0x404 ./build/Debug/.obj/PSFB/psfb.o
- .debug_frame   0x00000404      0x314 ./build/Debug/.obj/common/syscalls.o
- .debug_frame   0x00000718       0x5c ./build/Debug/.obj/common/system_hc32f334.o
- .debug_frame   0x00000774      0x210 ./build/Debug/.obj/driver/src/hc32_ll.o
- .debug_frame   0x00000984      0x56c ./build/Debug/.obj/driver/src/hc32_ll_adc.o
- .debug_frame   0x00000ef0       0x7c ./build/Debug/.obj/driver/src/hc32_ll_aos.o
- .debug_frame   0x00000f6c      0x5c4 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
- .debug_frame   0x00001530      0x778 ./build/Debug/.obj/driver/src/hc32_ll_dma.o
- .debug_frame   0x00001ca8      0x7bc ./build/Debug/.obj/driver/src/hc32_ll_efm.o
- .debug_frame   0x00002464       0xa0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
- .debug_frame   0x00002504      0x354 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
- .debug_frame   0x00002858      0x8f0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
- .debug_frame   0x00003148      0x524 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
- .debug_frame   0x0000366c      0x570 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
- .debug_frame   0x00003bdc      0x984 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
- .debug_frame   0x00004560      0x190 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
- .debug_frame   0x000046f0      0x1a8 ./build/Debug/.obj/source/main.o
- .debug_frame   0x00004898       0xac C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
- .debug_frame   0x00004944       0x50 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
- .debug_frame   0x00004994       0x24 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
- .debug_frame   0x000049b8       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x000049e4       0x44 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_frame   0x00004a28      0x144 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
- .debug_frame   0x00004b6c       0x7c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
- .debug_frame   0x00004be8       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
- .debug_frame   0x00004c08       0x38 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
- .debug_frame   0x00004c40       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
- .debug_frame   0x00004c6c       0xb0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
- .debug_frame   0x00004d1c       0x38 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
- .debug_frame   0x00004d54       0x50 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
- .debug_frame   0x00004da4       0x30 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
- .debug_frame   0x00004dd4       0x90 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
- .debug_frame   0x00004e64       0x60 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
- .debug_frame   0x00004ec4       0x28 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
- .debug_frame   0x00004eec       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
- .debug_frame   0x00004f18       0x4c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
- .debug_frame   0x00004f64       0x28 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
- .debug_frame   0x00004f8c       0x3c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
- .debug_frame   0x00004fc8       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
+.debug_frame    0x00000000     0x42c8
+ .debug_frame   0x00000000      0x444 ./build/Debug/.obj/PSFB/psfb.o
+ .debug_frame   0x00000444      0x314 ./build/Debug/.obj/common/syscalls.o
+ .debug_frame   0x00000758       0x5c ./build/Debug/.obj/common/system_hc32f334.o
+ .debug_frame   0x000007b4      0x210 ./build/Debug/.obj/driver/src/hc32_ll.o
+ .debug_frame   0x000009c4      0x5c4 ./build/Debug/.obj/driver/src/hc32_ll_clk.o
+ .debug_frame   0x00000f88      0x7bc ./build/Debug/.obj/driver/src/hc32_ll_efm.o
+ .debug_frame   0x00001744       0xa0 ./build/Debug/.obj/driver/src/hc32_ll_fcg.o
+ .debug_frame   0x000017e4      0x354 ./build/Debug/.obj/driver/src/hc32_ll_gpio.o
+ .debug_frame   0x00001b38      0x8f0 ./build/Debug/.obj/driver/src/hc32_ll_hrpwm.o
+ .debug_frame   0x00002428      0x524 ./build/Debug/.obj/driver/src/hc32_ll_interrupts.o
+ .debug_frame   0x0000294c      0x570 ./build/Debug/.obj/driver/src/hc32_ll_tmra.o
+ .debug_frame   0x00002ebc      0x984 ./build/Debug/.obj/driver/src/hc32_ll_usart.o
+ .debug_frame   0x00003840      0x190 ./build/Debug/.obj/driver/src/hc32_ll_utility.o
+ .debug_frame   0x000039d0      0x1a8 ./build/Debug/.obj/source/main.o
+ .debug_frame   0x00003b78       0xac C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00003c24       0x50 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00003c74       0x24 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00003c98       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00003cc4       0x44 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00003d08      0x144 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
+ .debug_frame   0x00003e4c       0x7c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-snprintf.o)
+ .debug_frame   0x00003ec8       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00003ee8       0x38 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+ .debug_frame   0x00003f20       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00003f4c       0xb0 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+ .debug_frame   0x00003ffc       0x38 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+ .debug_frame   0x00004034       0x50 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+ .debug_frame   0x00004084       0x30 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+ .debug_frame   0x000040b4       0x90 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-svfprintf.o)
+ .debug_frame   0x00004144       0x60 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o)
+ .debug_frame   0x000041a4       0x28 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memmove.o)
+ .debug_frame   0x000041cc       0x2c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
+ .debug_frame   0x000041f8       0x4c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
+ .debug_frame   0x00004244       0x28 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x0000426c       0x3c C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
+ .debug_frame   0x000042a8       0x20 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)

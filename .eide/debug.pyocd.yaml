@@ -8,4 +8,4 @@ frequency: 8000000
 
 connect_mode: under-reset
 
-reset_delay: 0.1
+reset_delay: 0.5
