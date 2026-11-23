@@ -90,18 +90,11 @@ typedef enum
 
 
 /*===================== 函数声明 =====================*/
-// static void         PSFB_GPIO_Init(void);
-// static void         PSFB_HRPWM2_Init(void);
-// static void         PSFB_HRPWM3_Init(void);
 void                PSFB_SetPhase(uint32_t u32PhaseCnt);
 uint32_t            PSFB_GetPhase(void);
-void                PSFB_Start(psfb_state_t state);
+void                PSFB_Soft_Start(psfb_state_t state);
 void                PSFB_Stop(void);
 
-// static void         ISENSE_GPIO_Init(void);
-// static void         ISENSE_ADC_Init(void);
-// static void         ISENSE_DMA_Init(void);
-// static uint16_t     ISENSE_ReadRaw(void);
 float               ISENSE_Sample(void);
 float               ISENSE_GetCurrent(void);
 uint8_t             ISENSE_CheckOverCurrent(void);
@@ -109,7 +102,7 @@ void                ISENSE_Init(void);
 
 void                PSFB_BSP_Init(void);
 
-void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue);
+void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue, uint32_t u32DeadTimeValue);
 void                DeadTime_Config(void);
 void                Phase_Config(uint32_t u32PhaseValue);
 

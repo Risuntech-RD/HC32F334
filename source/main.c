@@ -18,11 +18,13 @@ typedef struct
     uint32_t        cnt0;
     uint32_t        cnt1;
     uint32_t        cnt2;
-    uint8_t         mS;
+    uint32_t        cnt3;
+    uint32_t        mS;         // "RTC"时基
     uint8_t         SS;
     uint8_t         MM;
     uint8_t         HH;
-} stc_time_t;           //size: 16 bytes(4+4+4+1+1+1+1)
+    uint8_t         DD;
+} stc_time_t;                   //size: 24 bytes(4+4+4+4+4+1+1+1+1)
 
 static volatile stc_time_t  m_stcTime = {0U, 0U, 0U, 0U, 0U, 0U, 0U};
 
@@ -59,6 +61,20 @@ int main(void)
             m_stcTime.cnt0 = 0U;
             GPIO_TogglePins(GPIO_PORT_A, GPIO_PIN_02);
         }
+        if (m_stcTime.cnt1 >= 10000U)
+        {
+            m_stcTime.cnt1 = 0U;
+            snprintf(UartStr, sizeof(UartStr), "PSFB Stop\n");
+            Log_SendString(UartStr);
+            PSFB_Stop();
+        }
+        if (m_stcTime.cnt2 >= 20000U)
+        {
+            m_stcTime.cnt2 = 0U;           
+            snprintf(UartStr, sizeof(UartStr), "PSFB Soft Start\n");
+            Log_SendString(UartStr);
+            PSFB_Soft_Start(PSFB_SS_DISABLE);
+        }        
         if (m_stcTime.SS != u8LastSec)
         {
             u8LastSec = (uint8_t)m_stcTime.SS;
@@ -239,11 +255,13 @@ void TMRA_2_Ovf_Udf_Handler(void)
         m_stcTime.cnt0++;
         m_stcTime.cnt1++;
         m_stcTime.cnt2++;
+        m_stcTime.cnt3++;
+        m_stcTime.mS++;
 
-        m_stcTime.mS  =  m_stcTime.cnt1 % 100U;
-        m_stcTime.SS  = (m_stcTime.cnt1 / 1000U) % 60U;
-        m_stcTime.MM  = (m_stcTime.cnt1 / 60000U) % 60U;
-        m_stcTime.HH  =  m_stcTime.cnt1 / 3600000U;
+        m_stcTime.SS  = (m_stcTime.mS / 1000U) % 60U;
+        m_stcTime.MM  = (m_stcTime.mS / 60000U) % 60U;
+        m_stcTime.HH  =  m_stcTime.mS / 3600000U;
+        m_stcTime.DD  =  m_stcTime.mS / 86400000U;
     }
 }
 

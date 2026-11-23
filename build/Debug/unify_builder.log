@@ -662,3 +662,230 @@ These source files will be recompiled
 [2026-11-23 14:55:48]	[done]
 	build successfully !
 
+[2026-11-23 16:15:15]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:15:17]	[done]
+	build successfully !
+
+[2026-11-23 16:24:46]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:24:48]	[done]
+	build successfully !
+
+[2026-11-23 16:25:09]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:25:11]	[done]
+	build successfully !
+
+[2026-11-23 16:25:23]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:25:26]	[done]
+	build successfully !
+
+[2026-11-23 16:25:39]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:25:41]	[done]
+	build successfully !
+
+[2026-11-23 16:29:25]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:29:27]	[done]
+	build successfully !
+
+[2026-11-23 16:31:01]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:31:02]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./build/Debug/XHCODE.elf has a LOAD segment with RWX permissions
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/source/main.o: in function `main':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./source/main.c:70:(.text.main+0x6e): undefined reference to `PSFB_Start'
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: (PSFB_Start): Unknown destination type (ARM/Thumb) in ./build/Debug/.obj/source/main.o
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./source/main.c:70:(.text.main+0x6e): dangerous relocation: unsupported relocation
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       29132 B       128 KB     22.23%
+        OTP_DATA:          64 B         1 KB      6.25%
+        OTP_LOCK:          68 B         68 B    100.00%
+             RAM:         532 B        32 KB      1.62%
+            RAMB:           0 B         4 KB      0.00%
+collect2.exe: error: ld returned 1 exit status
+
+
+[2026-11-23 16:31:44]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': dependence 'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.h' has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:31:46]	[done]
+	build successfully !
+
+[2026-11-23 16:36:08]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:36:10]	[done]
+	build successfully !
+
+[2026-11-23 16:38:17]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:38:20]	[done]
+	build successfully !
+
+[2026-11-23 16:39:32]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:39:34]	[done]
+	build successfully !
+
+[2026-11-23 16:42:55]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:42:57]	[done]
+	build successfully !
+
+[2026-11-23 16:45:24]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:45:25]	[done]
+	build successfully !
+
+[2026-11-23 16:45:56]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:45:58]	[done]
+	build successfully !
+
+[2026-11-23 16:47:01]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:47:02]	[done]
+	build successfully !
+
+[2026-11-23 16:47:39]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:47:40]	[done]
+	build successfully !
+
+[2026-11-23 16:48:27]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:48:28]	[done]
+	build successfully !
+
+[2026-11-23 16:50:22]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:50:24]	[done]
+	build successfully !
+
+[2026-11-23 16:50:36]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:50:38]	[done]
+	build successfully !
+
+[2026-11-23 16:53:12]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 16:53:14]	[done]
+	build successfully !
+
+[2026-11-23 17:06:01]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 17:06:03]	[done]
+	build successfully !
+
+[2026-11-23 17:08:36]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 17:08:38]	[done]
+	build successfully !
+
+[2026-11-23 17:14:00]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 17:14:03]	[done]
+	build successfully !
+
+[2026-11-23 17:19:56]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 17:19:58]	[done]
+	build successfully !
+
+[2026-11-23 17:29:27]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 17:29:29]	[done]
+	build successfully !
+
