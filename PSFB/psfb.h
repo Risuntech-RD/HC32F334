@@ -118,7 +118,7 @@ void                PSFB_BSP_Init(void);
 
 void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue);
 void                DeadTime_Config(void);
-void                Phase_Config(void);
+void                Phase_Config(uint32_t u32PhaseValue);
 
 #ifdef __cplusplus
 }

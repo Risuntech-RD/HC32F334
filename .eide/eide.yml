@@ -112,7 +112,7 @@ targets:
         bin: ""
         config: .eide/debug.pyocd.yaml
         otherCmds: ""
-        speed: 10M
+        speed: 4M
         targetName: hc32f334jati
     uploader: pyOCD
   Release:

@@ -327,42 +327,51 @@ void PSFB_BSP_Init(void)
 
     HRPWM_CommonDeInit();
     HRPWM_CALIB_ProcessSingle();
+    HRPWM_Enable(CM_HRPWM1);        // HRPWM1(主)使能
     HRPWM_Enable(HRPWM_MASTER);
     HRPWM_Enable(HRPWM_SLAVE);
 
     PWM_Config(PSFB_PERIOD, PSFB_PERIOD / 3);
-    Phase_Config();
-    DeadTime_Config();
+    Phase_Config(PSFB_PHASE_MIN);
 
-    HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT2|HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
-    HRPWM_CountStart(HRPWM_MASTER);
+    HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
+    HRPWM_CountStart(CM_HRPWM1);
     HRPWM_CountStart(HRPWM_SLAVE);
+    HRPWM_CountStart(HRPWM_MASTER);
 
     //ISENSE_Init();
 
 }
-
+    
 /**
  * @brief  Configure PWM phase function
- * @param  None
+ * @param  [in] u32PhaseValue  PWM phase value
  * @retval None
  */
-void Phase_Config(void)
+void Phase_Config(uint32_t u32PhaseValue)
 {
     stc_hrpwm_ph_config_t stcPHConfig;
 
-    HRPWM_PH_SetCompareValue(HRPWM_PH_MATCH_IDX2, PSFB_PHASE_MID);
-    HRPWM_PH_SetCompareValue_Buf(HRPWM_PH_MATCH_IDX2, PSFB_PHASE_MID);
+    /* HRPWM1 为移相主时基, PHSCMP1~5 全局共享: IDX1=左桥 0° 基准, IDX2=右桥移相角 */
+    HRPWM_PH_SetCompareValue(HRPWM_PH_MATCH_IDX1, 0U);
+    HRPWM_PH_SetCompareValue_Buf(HRPWM_PH_MATCH_IDX1, 0U);
+    HRPWM_PH_SetCompareValue(HRPWM_PH_MATCH_IDX2, u32PhaseValue);
+    HRPWM_PH_SetCompareValue_Buf(HRPWM_PH_MATCH_IDX2, u32PhaseValue);
 
     (void)HRPWM_PH_StructInit(&stcPHConfig);
-    stcPHConfig.u32PhaseIndex   = HRPWM_PH_MATCH_IDX2;
-    stcPHConfig.u32ForceChA     = HRPWM_PH_MATCH_FORCE_CHA_OFF;
-    stcPHConfig.u32ForceChB     = HRPWM_PH_MATCH_FORCE_CHB_OFF;
-    stcPHConfig.u32PeriodLink   = HRPWM_PH_PERIOD_LINK_ON;
+    stcPHConfig.u32ForceChA   = HRPWM_PH_MATCH_FORCE_CHA_OFF;
+    stcPHConfig.u32ForceChB   = HRPWM_PH_MATCH_FORCE_CHB_OFF;
+    stcPHConfig.u32PeriodLink = HRPWM_PH_PERIOD_LINK_ON;
+
+    /* 左桥 HRPWM2 锁到 IDX1, 作为 0° 相位基准 */
+    stcPHConfig.u32PhaseIndex = HRPWM_PH_MATCH_IDX1;
+    (void)HRPWM_PH_Config(HRPWM_MASTER, &stcPHConfig);
+    HRPWM_PH_Enable(HRPWM_MASTER);
+
+    /* 右桥 HRPWM3 锁到 IDX2, 实现相对左桥的移相 */
+    stcPHConfig.u32PhaseIndex = HRPWM_PH_MATCH_IDX2;
     (void)HRPWM_PH_Config(HRPWM_SLAVE, &stcPHConfig);
-
     HRPWM_PH_Enable(HRPWM_SLAVE);
-
 }
 
 /**
@@ -396,27 +405,29 @@ void DeadTime_Config(void)
  */
 void PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue)
 {
-    stc_hrpwm_init_t     stcHrpwmInit;
-    stc_hrpwm_pwm_init_t stcPwmInit;
+    stc_hrpwm_init_t            stcHrpwmInit;
+    stc_hrpwm_pwm_init_t        stcPwmInit;
+    stc_hrpwm_deadtime_config_t stcDeadTimeConfig;
 
-    /* HRPWM general count function configure */
+    /* HRPWM1 为移相(PH)模块硬件固定主时基: 必须先设置其周期, PHSCMP 匹配才会产生相位事件 */
     (void)HRPWM_StructInit(&stcHrpwmInit);
-    stcHrpwmInit.u32CountMode               = HRPWM_MD_SAWTOOTH;
-    stcHrpwmInit.u32CountReload             = HRPWM_CNT_RELOAD_ON;
-    stcHrpwmInit.u32PeriodValue             = u32PeriodValue;
+    stcHrpwmInit.u32CountMode   = HRPWM_MD_SAWTOOTH;
+    stcHrpwmInit.u32CountReload = HRPWM_CNT_RELOAD_ON;
+    stcHrpwmInit.u32PeriodValue = u32PeriodValue;
+    (void)HRPWM_Init(CM_HRPWM1, &stcHrpwmInit);
+
+    /* 左桥 HRPWM2 / 右桥 HRPWM3 均为移相从单元: CountReload=OFF, 由相位匹配事件重装计数器实现移相 */
+    stcHrpwmInit.u32CountReload = HRPWM_CNT_RELOAD_OFF;
     (void)HRPWM_Init(HRPWM_MASTER, &stcHrpwmInit);
-
-    stcHrpwmInit.u32CountReload             = HRPWM_CNT_RELOAD_OFF;
     (void)HRPWM_Init(HRPWM_SLAVE,  &stcHrpwmInit);
-
 
     /* Configure PWM output */
     (void)HRPWM_PWM_StructInit(&stcPwmInit);
     stcPwmInit.u32CompareValue              = u32CompareValue;
-    stcPwmInit.u32StartPolarity             = HRPWM_PWM_START_LOW;          // LOW
-    stcPwmInit.u32PeakPolarity              = HRPWM_PWM_PEAK_INVT;          // HRPWM_PWM_PEAK_INVT;
+    stcPwmInit.u32StartPolarity             = HRPWM_PWM_START_LOW;
+    stcPwmInit.u32PeakPolarity              = HRPWM_PWM_PEAK_INVT;
     stcPwmInit.u32ValleyPolarity            = HRPWM_PWM_VALLEY_HOLD;
-    stcPwmInit.u32UpMatchAPolarity          = HRPWM_PWM_UP_MATCH_A_HIGH;    // HRPWM_PWM_UP_MATCH_A_INVT;
+    stcPwmInit.u32UpMatchAPolarity          = HRPWM_PWM_UP_MATCH_A_HIGH;
     stcPwmInit.u32DownMatchAPolarity        = HRPWM_PWM_DOWN_MATCH_A_HOLD;
     stcPwmInit.u32UpMatchBPolarity          = HRPWM_PWM_UP_MATCH_B_HOLD;
     stcPwmInit.u32DownMatchBPolarity        = HRPWM_PWM_DOWN_MATCH_B_HOLD;
@@ -431,53 +442,30 @@ void PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue)
     (void)HRPWM_PWM_ChAInit(HRPWM_MASTER, &stcPwmInit);
     (void)HRPWM_PWM_ChAInit(HRPWM_SLAVE, &stcPwmInit);
 
-    stcPwmInit.u32StartPolarity             = HRPWM_PWM_START_HIGH;         // HIGH
+    stcPwmInit.u32StartPolarity             = HRPWM_PWM_START_HIGH;
     stcPwmInit.u32UpMatchAPolarity          = HRPWM_PWM_UP_MATCH_A_LOW;
     stcPwmInit.u32DownMatchAPolarity        = HRPWM_PWM_DOWN_MATCH_A_HIGH;
     (void)HRPWM_PWM_ChBInit(HRPWM_MASTER, &stcPwmInit);
     (void)HRPWM_PWM_ChBInit(HRPWM_SLAVE, &stcPwmInit);
 
-    /* 同步信号输出配置 (主单元输出同步脉冲给从单元, 作为PH移相基准) */
-    stc_hrpwm_sync_output_config_t stcSyncConfig;
-    
-    (void)HRPWM_SYNC_StructInit(&stcSyncConfig);
-    stcSyncConfig.u32Src        = HRPWM_SYNC_SRC_U2_CNT_VALLEY;     // 源: U2谷底
-    stcSyncConfig.u32Pulse      = HRPWM_SYNC_PULSE_POSITIVE;        // 正脉冲
-    stcSyncConfig.u32PulseWidth = 0x10UL;
-    (void)HRPWM_SYNC_Config(&stcSyncConfig);                        // 同步脉冲配置
+    /* 死区: 左右桥对称死区, 防止上下管直通 (PSFB_DT_CNT = 500ns) */
+    (void)HRPWM_DeadTimeStructInit(&stcDeadTimeConfig);
+    stcDeadTimeConfig.u32EqualUpDown = HRPWM_DEADTIME_EQUAL_ON;
+    (void)HRPWM_DeadTimeConfig(HRPWM_MASTER, &stcDeadTimeConfig);
+    (void)HRPWM_DeadTimeConfig(HRPWM_SLAVE,  &stcDeadTimeConfig);
+    HRPWM_SetDeadTimeUpValue(HRPWM_MASTER, PSFB_DT_CNT);
+    HRPWM_SetDeadTimeUpValue(HRPWM_SLAVE,  PSFB_DT_CNT);
+    HRPWM_DeadTimeEnable(HRPWM_MASTER);
+    HRPWM_DeadTimeEnable(HRPWM_SLAVE);
 
-
-#if 0
-    /* 死区配置 */
-    stc_hrpwm_deadtime_config_t stcDeadtimeInit;
-    (void)HRPWM_DeadTimeStructInit(&stcDeadtimeInit);
-    stcDeadtimeInit.u32EqualUpDown = HRPWM_DEADTIME_EQUAL_ON;
-    (void)HRPWM_DeadTimeConfig(HRPWMx, &stcDeadtimeInit);
-    HRPWM_SetDeadTimeUpValue(HRPWMx, PSFB_DT_CNT);
-    HRPWM_DeadTimeEnable(HRPWMx);
-
-    /* PH移相配置 (仅从单元HRPWM3需要移相, 主单元HRPWM2相位=0不需要) */
-    if (HRPWMx == HRPWM_SLAVE) {
-        stc_hrpwm_ph_config_t stcPhInit;
-
-        (void)HRPWM_PH_StructInit(&stcPhInit);
-        stcPhInit.u32PeriodLink     = HRPWM_PH_PERIOD_LINK_ON;
-        stcPhInit.u32PhaseIndex     = HRPWM_PH_MATCH_IDX2;
-        (void)HRPWM_PH_Config(HRPWMx, &stcPhInit);
-
-        HRPWM_PH_SetCompareValue(HRPWM_PH_MATCH_IDX2, PSFB_PHASE_MIN);      /* 写入 active 寄存器 PHSCMP2A */
-        HRPWM_PH_SetCompareValue_Buf(HRPWM_PH_MATCH_IDX2, PSFB_PHASE_MIN);  /* 同步写入 buffer   PHSCMP2B, 防止传输覆盖 */
-        HRPWM_PH_Enable(HRPWMx);
-    }
-#endif
-
-    /* PWM output enable */
+    /* PWM output enable (HRPWM1 仅作移相主时基, 不使能输出) */
     HRPWM_PWM_ChAOutputEnable(HRPWM_MASTER);
     HRPWM_PWM_ChBOutputEnable(HRPWM_MASTER);
-    HRPWM_PWM_ChAOutputEnable(HRPWM_SLAVE);     // 使能从单元 HRPWM3 的 PWM 输出
+    HRPWM_PWM_ChAOutputEnable(HRPWM_SLAVE);
     HRPWM_PWM_ChBOutputEnable(HRPWM_SLAVE);
-
 }
+
+
 
 
 /*  ****** end of file  */

@@ -7,7 +7,7 @@
     "buildMode": "fast|multhread",
     "showRepathOnLog": true,
     "threadNum": 6,
-    "rootDir": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+    "rootDir": "c:\\Users\\rsta1033\\Desktop\\Starter\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
     "dumpPath": "build\\Debug",
     "outDir": "build\\Debug",
     "incDirs": [
@@ -98,21 +98,21 @@
             "remove-unused-input-sections": true,
             "$toolName": "gcc",
             "link-scatter": [
-                "c:/Users/rsta1033/Desktop/HC32F334/F334_LQ64_DAB/XHCODE/Eclipse/GCC/HC32F334xA.ld"
+                "c:/Users/rsta1033/Desktop/Starter/HC32F334/F334_LQ64_DAB/XHCODE/Eclipse/GCC/HC32F334xA.ld"
             ]
         }
     },
     "env": {
         "PATH": "${env:PATH}",
-        "workspaceFolder": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+        "workspaceFolder": "c:\\Users\\rsta1033\\Desktop\\Starter\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
         "workspaceFolderBasename": "Eclipse",
-        "OutDir": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug",
+        "OutDir": "c:\\Users\\rsta1033\\Desktop\\Starter\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug",
         "OutDirRoot": "build",
         "OutDirBase": "build\\Debug",
         "ProjectName": "XHCODE",
         "ConfigName": "Debug",
-        "ProjectRoot": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
-        "ExecutableName": "c:\\Users\\rsta1033\\Desktop\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug\\XHCODE",
+        "ProjectRoot": "c:\\Users\\rsta1033\\Desktop\\Starter\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse",
+        "ExecutableName": "c:\\Users\\rsta1033\\Desktop\\Starter\\HC32F334\\F334_LQ64_DAB\\XHCODE\\Eclipse\\build\\Debug\\XHCODE",
         "ChipPackDir": ".pack/HDSC/HC32F334.1.0.0",
         "ChipName": "HC32F334JATI",
         "SYS_Platform": "win32",

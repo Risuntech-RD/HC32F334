@@ -371,3 +371,267 @@ These source files will be recompiled
 [2026-11-04 17:31:34]	[done]
 	build successfully !
 
+[2026-11-20 15:32:24]	[info] incremental build: 21 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\GCC\startup_hc32f334.S': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\syscalls.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\common\system_hc32f334.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_adc.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_aos.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_clk.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_dma.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_efm.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_fcg.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_gpio.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_hrpwm.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_icg.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_interrupts.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_pwc.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_sram.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_tmra.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_usart.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\driver\src\hc32_ll_utility.c': compiler options has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 15:32:31]	[done]
+	build successfully !
+
+[2026-11-20 15:37:13]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 15:37:15]	[done]
+	build successfully !
+
+[2026-11-20 16:14:31]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:14:33]	[done]
+	build successfully !
+
+[2026-11-20 16:15:01]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:15:02]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/psfb.c: In function 'PWM_Config':
+./PSFB/psfb.c:456:32: error: 'HRPWMx' undeclared (first use in this function)
+  456 |     (void)HRPWM_DeadTimeConfig(HRPWMx, &stcDeadtimeInit);
+      |                                ^~~~~~
+./PSFB/psfb.c:456:32: note: each undeclared identifier is reported only once for each function it appears in
+
+[2026-11-20 16:15:26]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:15:28]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/psfb.c: In function 'PWM_Config':
+./PSFB/psfb.c:467:31: error: 'HRPWMx' undeclared (first use in this function)
+  467 |         (void)HRPWM_PH_Config(HRPWMx, &stcPhInit);
+      |                               ^~~~~~
+./PSFB/psfb.c:467:31: note: each undeclared identifier is reported only once for each function it appears in
+
+[2026-11-20 16:15:36]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:15:38]	[done]
+	build successfully !
+
+[2026-11-20 16:16:18]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:16:18]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/psfb.o -MMD ./PSFB/psfb.c
+   at unify_builder.Program.Main(String[] args_)
+---
+In file included from ./PSFB/psfb.c:24:
+./PSFB/psfb.c: In function 'PWM_Config':
+./PSFB/psfb.h:51:33: error: passing argument 1 of 'HRPWM_SYNC_Config' from incompatible pointer type [-Wincompatible-pointer-types]
+   51 | #define HRPWM_MASTER            (CM_HRPWM2)
+      |                                 ^~~~~~~~~~~
+      |                                 |
+      |                                 CM_HRPWM_TypeDef *
+./PSFB/psfb.c:447:29: note: in expansion of macro 'HRPWM_MASTER'
+  447 |     (void)HRPWM_SYNC_Config(HRPWM_MASTER, &stcSyncConfig);                      // 同步脉冲配置
+      |                             ^~~~~~~~~~~~
+In file included from driver/inc/hc32_ll.h:210,
+                 from ./PSFB/psfb.h:22:
+driver/inc/hc32_ll_hrpwm.h:7174:59: note: expected 'stc_hrpwm_sync_output_config_t *' but argument is of type 'CM_HRPWM_TypeDef *'
+ 7174 | int32_t HRPWM_SYNC_Config(stc_hrpwm_sync_output_config_t *pstcSyncConfig);
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+./PSFB/psfb.c:447:11: error: too many arguments to function 'HRPWM_SYNC_Config'; expected 1, have 2
+  447 |     (void)HRPWM_SYNC_Config(HRPWM_MASTER, &stcSyncConfig);                      // 同步脉冲配置
+      |           ^~~~~~~~~~~~~~~~~               ~~~~~~~~~~~~~~
+driver/inc/hc32_ll_hrpwm.h:7174:9: note: declared here
+ 7174 | int32_t HRPWM_SYNC_Config(stc_hrpwm_sync_output_config_t *pstcSyncConfig);
+      |         ^~~~~~~~~~~~~~~~~
+
+[2026-11-20 16:17:25]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:17:28]	[done]
+	build successfully !
+
+[2026-11-20 16:18:34]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:18:36]	[done]
+	build successfully !
+
+[2026-11-20 16:21:11]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:21:13]	[done]
+	build successfully !
+
+[2026-11-20 16:21:52]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:21:54]	[done]
+	build successfully !
+
+[2026-11-20 16:23:46]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:23:48]	[done]
+	build successfully !
+
+[2026-11-20 16:24:52]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 16:24:55]	[done]
+	build successfully !
+
+[2026-11-20 17:20:44]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 17:20:46]	[done]
+	build successfully !
+
+[2026-11-20 17:21:43]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-20 17:21:46]	[done]
+	build successfully !
+
+[2026-11-23 13:49:07]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 13:49:09]	[done]
+	build successfully !
+
+[2026-11-23 13:51:21]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 13:51:23]	[done]
+	build successfully !
+
+[2026-11-23 13:51:51]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 13:51:53]	[done]
+	build successfully !
+
+[2026-11-23 13:52:18]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 13:52:20]	[done]
+	build successfully !
+
+[2026-11-23 14:23:13]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:23:14]	[done]
+	build successfully !
+
+[2026-11-23 14:25:58]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:26:00]	[done]
+	build successfully !
+
+[2026-11-23 14:27:52]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:27:54]	[done]
+	build successfully !
+
+[2026-11-23 14:28:47]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:28:49]	[done]
+	build successfully !
+
