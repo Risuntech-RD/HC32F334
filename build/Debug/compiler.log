@@ -20,7 +20,7 @@ The amount of Asm files: 0
 
 C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./build/Debug/XHCODE.elf has a LOAD segment with RWX permissions
 Memory region         Used Size  Region Size  %age Used
-           FLASH:       28524 B       128 KB     21.76%
+           FLASH:       28528 B       128 KB     21.77%
         OTP_DATA:          64 B         1 KB      6.25%
         OTP_LOCK:          68 B         68 B    100.00%
              RAM:         532 B        32 KB      1.62%

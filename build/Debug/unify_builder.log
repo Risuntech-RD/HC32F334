@@ -635,3 +635,30 @@ These source files will be recompiled
 [2026-11-23 14:28:49]	[done]
 	build successfully !
 
+[2026-11-23 14:40:22]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:40:24]	[done]
+	build successfully !
+
+[2026-11-23 14:51:27]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:51:29]	[done]
+	build successfully !
+
+[2026-11-23 14:55:45]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': dependence 'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.h' has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-23 14:55:48]	[done]
+	build successfully !
+

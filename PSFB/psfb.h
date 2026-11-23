@@ -27,7 +27,6 @@ extern "C" {
 #endif
 
 /*===================== 系统时钟参数 (24MHz XTAL -> 120MHz) =====================*/
-#define PSFB_XTAL_FREQ_HZ       (24000000UL)
 #define PSFB_SYSCLK_HZ          (120000000UL)
 
 /*===================== HRPWM时钟参数 =====================*/
@@ -40,20 +39,15 @@ extern "C" {
 /* HRPWM 高精度寄存器格式: 1 PCLK0 周期 = 64 计数 (<<6), 低6位为小数 */
 #define PSFB_PERIOD             (uint32_t)((PSFB_HRPWM_CLK_HZ / (PSFB_PWM_FREQ_HZ)) << 6)                     // 120000000/(40000)<<6 = 3000<<6 = 192000
 #define PSFB_DT_CNT             (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)     // 60<<6 = 3840
-#define PSFB_HALF_PERIOD        (uint32_t)(PSFB_PERIOD / 2U)
 
 /* 相位限幅: 5°~170°, 避免 0°(满电压冲击/偏磁) 与 180°(直通/环流损耗) */
 #define PSFB_PHASE_MIN          (uint32_t)((PSFB_PERIOD * 5UL)   / 180UL)
-#define PSFB_PHASE_MID          (uint32_t)((PSFB_PERIOD * 90UL)  / 180UL)
 #define PSFB_PHASE_MAX          (uint32_t)((PSFB_PERIOD * 170UL) / 180UL)
 
 /*--------------------- HRPWM 模块定义 ---------------------*/
 #define HRPWM_MASTER            (CM_HRPWM2)
 #define HRPWM_SLAVE             (CM_HRPWM3)
 
-/* PHSCMP value */
-#define HRPWM_PHSCMP1_VALUE     ((1 * PSFB_PERIOD * 2 / 3U) - 64U)
-#define HRPWM_PHSCMP2_VALUE     ((2 * PSFB_PERIOD * 2 / 3U) - 64U)  
 /* Dead time value 130pS * 100000 = 13uS */
 #define HRPWM_DEADTIME_VALUE            (10000UL)
 
@@ -77,7 +71,6 @@ extern "C" {
 /*----- DMA 配置: ADC1 -> 内存循环缓冲区 -----*/
 #define ISENSE_DMA_UNIT         (CM_DMA)
 #define ISENSE_DMA_CH           (DMA_CH0)
-#define ISENSE_DMA_BUF_DEPTH    (16U)
 
 
 /*===================== 全局变量 =====================*/
@@ -125,4 +118,3 @@ void                Phase_Config(uint32_t u32PhaseValue);
 #endif
 
 #endif /* __PSFB_HC_H__ */
-

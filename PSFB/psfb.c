@@ -331,7 +331,7 @@ void PSFB_BSP_Init(void)
     HRPWM_Enable(HRPWM_MASTER);
     HRPWM_Enable(HRPWM_SLAVE);
 
-    PWM_Config(PSFB_PERIOD, PSFB_PERIOD / 3);
+    PWM_Config(PSFB_PERIOD, PSFB_PERIOD / 2);
     Phase_Config(PSFB_PHASE_MIN);
 
     HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
@@ -385,9 +385,9 @@ void DeadTime_Config(void)
     (void)HRPWM_DeadTimeStructInit(&stcDeadTimeConfig);
     /* Set dead time value */
     HRPWM_SetDeadTimeUpValue(HRPWM_MASTER, HRPWM_DEADTIME_VALUE);
-    HRPWM_SetDeadTimeDownValue(HRPWM_MASTER, HRPWM_DEADTIME_VALUE / 2U);
+    HRPWM_SetDeadTimeDownValue(HRPWM_MASTER, HRPWM_DEADTIME_VALUE);
     HRPWM_SetDeadTimeUpValue(HRPWM_SLAVE, HRPWM_DEADTIME_VALUE);
-    HRPWM_SetDeadTimeDownValue(HRPWM_SLAVE, HRPWM_DEADTIME_VALUE / 2U);
+    HRPWM_SetDeadTimeDownValue(HRPWM_SLAVE, HRPWM_DEADTIME_VALUE);
     
     /* DeadTime function configure */
     stcDeadTimeConfig.u32EqualUpDown = HRPWM_DEADTIME_EQUAL_OFF;
