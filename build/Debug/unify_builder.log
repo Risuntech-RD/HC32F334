@@ -889,3 +889,12 @@ These source files will be recompiled
 [2026-11-23 17:29:29]	[done]
 	build successfully !
 
+[2026-11-24 13:52:45]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 13:52:47]	[done]
+	build successfully !
+

@@ -10,8 +10,9 @@
  *   PA11 (HRPWM3_PWMB) -> PWM2N -> U5 LIN -> LO -> R17(10R) -> Q4  (右桥低)
  *
  * 移相全桥工作原理:
- *   HRPWM2(左桥): 50%占空比互补PWM, 相位=0(基准), 产生同步脉冲给HRPWM3
- *   HRPWM3(右桥): 50%占空比互补PWM, 相位=phase(0~PERIOD, 对应0°~180°)
+ *   HRPWM1: 50%占空比互补PWM, 产生同步脉冲给HRPWM2/3, PHSCMP1~5
+ *   HRPWM2(左桥): 50%占空比互补PWM, 相位=0, (HRPWM_PH_MATCH_IDX1)
+ *   HRPWM3(右桥): 50%占空比互补PWM, 相位=phase(0~PERIOD, 对应0°~180°), (HRPWM_PH_MATCH_IDX2)
  *   phase=0       -> 左右桥同相, 变压器电压最大
  *   phase=PERIOD  -> 左右桥反相, 变压器电压为零
  *   死区由 HRPWM 硬件死区发生器保证, 无需软件干预
@@ -98,12 +99,14 @@ uint32_t PSFB_GetPhase(void)
 
 /**
  * @brief  启动移相全桥(PSFB)驱动
- * @note   从 PSFB_PHASE_MAX(170°, 零功率) 逐步递减到 phaseCnt, 每步延时使功率缓慢爬升
+ * @note   从 PSFB_PHASE_MAX(最小功率) 逐步递减到目标相位, 每步延时使功率缓慢爬升
  * @param  None
  * @retval None
  */
 void PSFB_Soft_Start(psfb_state_t state)
 {
+    uint32_t u32TargetPhase = phaseCnt;
+    
     /* 1. 相位置于零功率(170°)起步, 避免启动瞬间功率冲击 */
     PSFB_SetPhase(PSFB_PHASE_MAX);
 
@@ -121,21 +124,21 @@ void PSFB_Soft_Start(psfb_state_t state)
     if (state == PSFB_SS_ENABLE)
     {
         uint32_t i;
-        uint32_t step = (PSFB_PHASE_MAX - phaseCnt) / PSFB_SS_STEPS;
+        uint32_t step = (PSFB_PHASE_MAX - u32TargetPhase) / PSFB_SS_STEPS;
         if (step == 0U)
         {
             step = 1U;
         }
-        for (i = PSFB_PHASE_MAX; i > phaseCnt; i -= step)
+        for (i = PSFB_PHASE_MAX; i > u32TargetPhase; i -= step)
         {
             PSFB_SetPhase(i);
             DDL_DelayMS(PSFB_SS_DELAY_MS);
         }
-        PSFB_SetPhase(phaseCnt);
+        PSFB_SetPhase(u32TargetPhase);
     }
     else
     {
-        PSFB_SetPhase(phaseCnt);
+        PSFB_SetPhase(u32TargetPhase);
     }
 
 }
@@ -149,11 +152,10 @@ void PSFB_Soft_Start(psfb_state_t state)
 void PSFB_Stop(void)
 {
     /* 1. 相位拉到零功率(170°), 降低关断瞬间变压器伏秒冲击 */
-    PSFB_SetPhase(PSFB_PHASE_MAX);
+    //PSFB_SetPhase(PSFB_PHASE_MAX);
 
     /* 2. 立即进入 IDLE: 强制所有 PWM 输出钳位到空闲低电平, 与计数器当前位置无关, 消除关断毛刺 */
-    HRPWM_IDLE_EnterImmediate(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3,
-                              HRPWM_SW_SYNC_CH_ALL);
+    HRPWM_IDLE_EnterImmediate(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3,  HRPWM_SW_SYNC_CH_ALL);
 
     /* 3. 同步停止并清零所有计数器(主+从): 输出已被 IDLE 钳低, 此处仅停止计数;
      *    保持模块/输出使能/PH/时钟/GPIO 配置不变, 确保下次启动状态干净可直接恢复 */
@@ -161,6 +163,23 @@ void PSFB_Stop(void)
     HRPWM_SWSyncClear(HRPWM_UNIT1 | HRPWM_UNIT2 | HRPWM_UNIT3);
 }
 
+/**
+ * @brief  启动移相全桥(PSFB)驱动
+ * @note   仅清零计数器、退出 IDLE 并启动主时基计数, 保持当前相位 phaseCnt 不变
+ * @param  None
+ * @retval None
+ */
+void PSFB_Start(void)
+{
+    /* 1. 清零所有计数器(主+从): 保证首个 PWM 周期从 0 开始、主从对齐, 消除重启乱波 */
+    HRPWM_SWSyncClear(HRPWM_UNIT1 | HRPWM_UNIT2 | HRPWM_UNIT3);
+
+    /* 2. 退出 IDLE, 释放输出到运行态: 输出恢复由计数器/比较值控制 (保持当前相位, 无冲击) */
+    HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
+
+    /* 3. 启动主时基计数器: 移相从单元(HRPWM2/3)由主时基相位事件重装计数, 无需单独 CountStart */
+    HRPWM_CountStart(CM_HRPWM1);
+}
 
 /**
  * @brief  Configure PWM phase function
@@ -213,7 +232,7 @@ void PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue, uint32_t u32D
     stcHrpwmInit.u32CountMode   = HRPWM_MD_SAWTOOTH;
     stcHrpwmInit.u32CountReload = HRPWM_CNT_RELOAD_ON;
     stcHrpwmInit.u32PeriodValue = u32PeriodValue;                       // PWM period value
-    (void)HRPWM_Init(CM_HRPWM1, &stcHrpwmInit);
+    (void)HRPWM_Init(HRPWM_MAIN, &stcHrpwmInit);
 
     /* 左桥 HRPWM2 / 右桥 HRPWM3 均为移相从单元: CountReload=OFF, 由相位匹配事件重装计数器实现移相 */
     stcHrpwmInit.u32CountReload = HRPWM_CNT_RELOAD_OFF;
@@ -446,17 +465,16 @@ void PSFB_BSP_Init(void)
 
     HRPWM_CommonDeInit();
     HRPWM_CALIB_ProcessSingle();
+    PWM_Config(PSFB_PERIOD, PSFB_PERIOD / 2, PSFB_DT_CNT);
+    Phase_Config(PSFB_PHASE_MIN);
+
     HRPWM_Enable(CM_HRPWM1);        // HRPWM1(主)使能
     HRPWM_Enable(HRPWM_MASTER);
     HRPWM_Enable(HRPWM_SLAVE);
 
-    PWM_Config(PSFB_PERIOD, PSFB_PERIOD / 2, PSFB_DT_CNT);
-    Phase_Config(PSFB_PHASE_MIN);
-
     HRPWM_IDLE_Exit(HRPWM_SW_SYNC_UNIT1 | HRPWM_SW_SYNC_UNIT2 | HRPWM_SW_SYNC_UNIT3, HRPWM_SW_SYNC_CH_ALL);
-    HRPWM_CountStart(CM_HRPWM1);
-    // HRPWM_CountStart(HRPWM_MASTER);      // 主桥使能,移相不必计数
-    // HRPWM_CountStart(HRPWM_SLAVE);
+    //HRPWM_CountStart(CM_HRPWM1);
+
 
     //ISENSE_Init();
 

@@ -26,7 +26,7 @@
 extern "C" {
 #endif
 
-/*===================== 系统时钟参数 (24MHz XTAL -> 120MHz) =====================*/
+/*===================== 系统时钟参数 (24MHz XTAL -PLL-> 120MHz) =====================*/
 #define PSFB_SYSCLK_HZ          (120000000UL)
 
 /*===================== HRPWM时钟参数 =====================*/
@@ -37,14 +37,19 @@ extern "C" {
 
 /*--------------------------- 计算值 ---------------------------*/
 /* HRPWM 高精度寄存器格式: 1 PCLK0 周期 = 64 计数 (<<6), 低6位为小数 */
-#define PSFB_PERIOD             (uint32_t)((PSFB_HRPWM_CLK_HZ / (PSFB_PWM_FREQ_HZ)) << 6)                     // 120000000/(40000)<<6 = 3000<<6 = 192000
+#define PSFB_PERIOD             (uint32_t)((PSFB_HRPWM_CLK_HZ / (PSFB_PWM_FREQ_HZ)-1) << 6)                         // 120000000/(40000)<<6 = 3000<<6 = 192000
 #define PSFB_DT_CNT             (uint32_t)(((PSFB_HRPWM_CLK_HZ / 1000000UL) * PSFB_DEAD_TIME_NS / 1000UL) << 6)     // 60<<6 = 3840
 
-/* 相位限幅: 5°~170°, 避免 0°(满电压冲击/偏磁) 与 180°(直通/环流损耗) */
-#define PSFB_PHASE_MIN          (uint32_t)((PSFB_PERIOD * 5UL)   / 180UL)
-#define PSFB_PHASE_MAX          (uint32_t)((PSFB_PERIOD * 170UL) / 180UL)
+/* 相位限幅: 5°~170°, 避免 0°(满电压冲击/偏磁) 与 180°(直通/环流损耗)
+ * 主时基 HRPWM1 一整个计数周期 PSFB_PERIOD 对应 360°(T); PSFB 移相角 θ∈[0°,180°] 映射到 0~T/2,
+ * 故相位计数 = (θ/360°)*PSFB_PERIOD. 若误除以 180 会使相位值翻倍, 超过半周期后硬件回绕,
+ * 导致 MAX(170°) 实际等效为一个接近 0° 的小相位 */
+#define PSFB_PHASE_MIN          (uint32_t)((PSFB_PERIOD * 10UL)  / 360UL)       //相移越小, 功率越大, 10°对应最大功率
+#define PSFB_PHASE_MAX          (uint32_t)((PSFB_PERIOD * 160UL) / 360UL)       //相移越大, 功率越小, 160°对应最小功率
 
 /*--------------------- HRPWM 模块定义 ---------------------*/
+
+#define HRPWM_MAIN              (CM_HRPWM1)    // HRPWM1 为主时基模块, 产生周期事件用于触发 ADC/DMA
 #define HRPWM_MASTER            (CM_HRPWM2)
 #define HRPWM_SLAVE             (CM_HRPWM3)
 
@@ -93,6 +98,7 @@ typedef enum
 void                PSFB_SetPhase(uint32_t u32PhaseCnt);
 uint32_t            PSFB_GetPhase(void);
 void                PSFB_Soft_Start(psfb_state_t state);
+void                PSFB_Start(void);
 void                PSFB_Stop(void);
 
 float               ISENSE_Sample(void);
@@ -103,7 +109,6 @@ void                ISENSE_Init(void);
 void                PSFB_BSP_Init(void);
 
 void                PWM_Config(uint32_t u32PeriodValue, uint32_t u32CompareValue, uint32_t u32DeadTimeValue);
-void                DeadTime_Config(void);
 void                Phase_Config(uint32_t u32PhaseValue);
 
 #ifdef __cplusplus

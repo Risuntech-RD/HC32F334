@@ -50,7 +50,7 @@ int main(void)
     debug_output();                 // 输出系统信息
 
     PSFB_BSP_Init();                // 初始化PSFB_HC
-    //PSFB_Start(PSFB_SS_ENABLE);     // 启动HPRPWM
+    PSFB_Soft_Start(PSFB_SS_ENABLE);
 
 
     /* 主循环 */
@@ -71,9 +71,9 @@ int main(void)
         if (m_stcTime.cnt2 >= 20000U)
         {
             m_stcTime.cnt2 = 0U;           
-            snprintf(UartStr, sizeof(UartStr), "PSFB Soft Start\n");
+            snprintf(UartStr, sizeof(UartStr), "PSFB Start\n");
             Log_SendString(UartStr);
-            PSFB_Soft_Start(PSFB_SS_DISABLE);
+            PSFB_Start();
         }        
         if (m_stcTime.SS != u8LastSec)
         {
