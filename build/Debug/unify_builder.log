@@ -898,3 +898,68 @@ These source files will be recompiled
 [2026-11-24 13:52:47]	[done]
 	build successfully !
 
+[2026-11-24 14:53:28]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 14:53:29]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/source/main.o -MMD ./source/main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./source/main.c: In function 'main':
+./source/main.c:65:37: error: expected expression before '%' token
+   65 |         if (m_stcTime.cnt1 % 10000U)%2U == 0U)
+      |                                     ^
+./source/main.c:65:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   65 |         if (m_stcTime.cnt1 % 10000U)%2U == 0U)
+      |         ^~
+./source/main.c:65:46: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   65 |         if (m_stcTime.cnt1 % 10000U)%2U == 0U)
+      |                                              ^
+./source/main.c:65:46: error: expected statement before ')' token
+./source/main.c:71:9: error: 'else' without a previous 'if'
+   71 |         else
+      |         ^~~~
+
+[2026-11-24 14:53:42]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 14:53:43]	[done]
+	build successfully !
+
+[2026-11-24 14:58:52]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 14:58:53]	[done]
+	build successfully !
+
+[2026-11-24 14:59:38]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 14:59:39]	[done]
+	build successfully !
+
+[2026-11-24 14:59:50]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 14:59:52]	[done]
+	build successfully !
+
+[2026-11-24 15:20:52]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-24 15:20:53]	[done]
+	build successfully !
+

@@ -56,33 +56,52 @@ int main(void)
     /* 主循环 */
     for (;;)
     {
+        /** LED闪烁 */
         if (m_stcTime.cnt0 >= 1000U)
         {
             m_stcTime.cnt0 = 0U;
             GPIO_TogglePins(GPIO_PORT_A, GPIO_PIN_02);
         }
+
+        /** PSFB 切换 */
+        static uint8_t hrpwm_state = 0U;
         if (m_stcTime.cnt1 >= 10000U)
         {
             m_stcTime.cnt1 = 0U;
-            snprintf(UartStr, sizeof(UartStr), "PSFB Stop\n");
-            Log_SendString(UartStr);
-            PSFB_Stop();
+            if (hrpwm_state == 0U)
+            {
+                hrpwm_state = 1U;
+                snprintf(UartStr, sizeof(UartStr), "PSFB Stop\n");
+                Log_SendString(UartStr);
+                PSFB_Stop();
+            }
+            else
+            {
+                hrpwm_state = 0U;
+                snprintf(UartStr, sizeof(UartStr), "PSFB Start\n");
+                Log_SendString(UartStr);
+                PSFB_Start();
+            }
         }
+
+        /** 时间更新 */
         if (m_stcTime.cnt2 >= 20000U)
         {
             m_stcTime.cnt2 = 0U;           
-            snprintf(UartStr, sizeof(UartStr), "PSFB Start\n");
-            Log_SendString(UartStr);
-            PSFB_Start();
-        }        
+
+        }
+
+        /** 时间打印显示 */
         if (m_stcTime.SS != u8LastSec)
         {
             u8LastSec = (uint8_t)m_stcTime.SS;
             snprintf(UartStr, sizeof(UartStr), "LED blink\nTime: %02d:%02d:%02d\n", m_stcTime.HH, m_stcTime.MM, m_stcTime.SS);
             Log_SendString(UartStr);
         }
+
     }
 }
+
 
 /***********************************************************************************************************/
 
