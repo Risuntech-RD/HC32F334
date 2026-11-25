@@ -41,16 +41,19 @@ int main(void)
 
     /* 初始化系统时钟和外设 */
     LL_PERIPH_WE(LL_PERIPH_ALL);
-    App_PortCfg();                  // 初始化GPIO端口
-    App_Tmra2Cfg();                 // 初始化TMRA2
-    App_USARTxCfg();                // 初始化USART1
-    __enable_irq();                 // 使能中断总线
-    Delay_ms(100U);                 // 等待系统时钟稳定
+    App_PortCfg();                          // 初始化GPIO端口
+    App_Tmra2Cfg();                         // 初始化TMRA2
+    App_USARTxCfg();                        // 初始化USART1
+    __enable_irq();                         // 使能中断总线
+    Delay_ms(100U);                         // 等待系统时钟稳定
 
-    debug_output();                 // 输出系统信息
+    debug_output();                         // 输出系统信息
 
-    PSFB_BSP_Init();                // 初始化PSFB_HC
+    PSFB_BSP_Init();                        // 初始化PSFB_HC
     PSFB_Soft_Start(PSFB_SS_ENABLE);
+
+    PWM_BSP_Init();                         // 初始化PWM
+    ISENSE_BSP_Init();                      // 初始化电流采样BSP
 
 
     /* 主循环 */
@@ -85,9 +88,12 @@ int main(void)
         }
 
         /** 时间更新 */
-        if (m_stcTime.cnt2 >= 20000U)
+        if (m_stcTime.cnt2 >= 5000U)
         {
-            m_stcTime.cnt2 = 0U;           
+            m_stcTime.cnt2 = 0U;
+            float current = ISENSE_Sample();
+            snprintf(UartStr, sizeof(UartStr), "Current: %0.2f A\n", current);
+            Log_SendString(UartStr);
 
         }
 

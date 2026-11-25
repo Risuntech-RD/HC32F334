@@ -89,7 +89,7 @@ targets:
         cpuInfo:
           cpuName: HC32F334xA
           vendor: HDSC
-        otherCmds: -NoGui 1 -ExitOnError 1
+        otherCmds: -NoGui 1
         proType: 1
         speed: 20000
       OpenOCD:

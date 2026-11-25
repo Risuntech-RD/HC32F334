@@ -963,3 +963,449 @@ These source files will be recompiled
 [2026-11-24 15:20:53]	[done]
 	build successfully !
 
+[2026-11-25 09:51:43]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': object (.o) file not exist
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 09:51:44]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:35: multiple definition of `isenseDmaBuf'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:35: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_SetPhase':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:76: multiple definition of `PSFB_SetPhase'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:76: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_GetPhase':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:95: multiple definition of `PSFB_GetPhase'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:95: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_Soft_Start':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:107: multiple definition of `PSFB_Soft_Start'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:107: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_Stop':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:153: multiple definition of `PSFB_Stop'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:153: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_Start':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:173: multiple definition of `PSFB_Start'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:173: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `Phase_Config':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:190: multiple definition of `Phase_Config'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:190: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PWM_Config':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:225: multiple definition of `PWM_Config'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:225: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `ISENSE_Sample':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:398: multiple definition of `ISENSE_Sample'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:398: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `ISENSE_GetCurrent':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:426: multiple definition of `ISENSE_GetCurrent'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:426: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `ISENSE_CheckOverCurrent':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:436: multiple definition of `ISENSE_CheckOverCurrent'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:436: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `ISENSE_Init':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:451: multiple definition of `ISENSE_Init'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:451: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: ./build/Debug/.obj/PSFB/psfb.o: in function `PSFB_BSP_Init':
+c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/psfb.c:460: multiple definition of `PSFB_BSP_Init'; ./build/Debug/.obj/PSFB/adc.o:c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse/./PSFB/adc.c:460: first defined here
+C:/Users/rsta1033/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld.exe: warning: ./build/Debug/XHCODE.elf has a LOAD segment with RWX permissions
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       29604 B       128 KB     22.59%
+        OTP_DATA:          64 B         1 KB      6.25%
+        OTP_LOCK:          68 B         68 B    100.00%
+             RAM:         548 B        32 KB      1.67%
+            RAMB:           0 B         4 KB      0.00%
+collect2.exe: error: ld returned 1 exit status
+
+
+[2026-11-25 09:57:58]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 09:57:59]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/adc.o -MMD ./PSFB/adc.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/adc.c:30:31: error: 'ISENSE_FILTER_WINDOW' undeclared here (not in a function)
+   30 | static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};      // 采样数据滤波缓冲�?      |                               ^~~~~~~~~~~~~~~~~~~~
+./PSFB/adc.c:34:34: error: 'ISENSE_DMA_BUF_DEPTH' undeclared here (not in a function)
+   34 | volatile uint16_t   isenseDmaBuf[ISENSE_DMA_BUF_DEPTH] = {0};   // DMA搬运缓冲�?      |                                  ^~~~~~~~~~~~~~~~~~~~
+./PSFB/adc.c: In function 'ISENSE_GPIO_Init':
+./PSFB/adc.c:50:15: error: 'ISENSE_ADC_PORT' undeclared (first use in this function)
+   50 |     GPIO_Init(ISENSE_ADC_PORT, ISENSE_ADC_PIN, &stcGpio);
+      |               ^~~~~~~~~~~~~~~
+./PSFB/adc.c:50:15: note: each undeclared identifier is reported only once for each function it appears in
+./PSFB/adc.c:50:32: error: 'ISENSE_ADC_PIN' undeclared (first use in this function)
+   50 |     GPIO_Init(ISENSE_ADC_PORT, ISENSE_ADC_PIN, &stcGpio);
+      |                                ^~~~~~~~~~~~~~
+./PSFB/adc.c: In function 'ISENSE_ADC_Init':
+./PSFB/adc.c:69:14: error: 'ISENSE_ADC_UNIT' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
+   69 |     ADC_Init(ISENSE_ADC_UNIT, &stcAdcInit);
+      |              ^~~~~~~~~~~~~~~
+      |              ISENSE_ADC_Init
+./PSFB/adc.c:71:43: error: 'ISENSE_ADC_CH' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
+   71 |     ADC_ChCmd(ISENSE_ADC_UNIT, ADC_SEQ_A, ISENSE_ADC_CH, ENABLE);
+      |                                           ^~~~~~~~~~~~~
+      |                                           ISENSE_ADC_Init
+./PSFB/adc.c: In function 'ISENSE_DMA_Init':
+./PSFB/adc.c:96:46: error: 'ISENSE_ADC_UNIT' undeclared (first use in this function); did you mean 'ISENSE_ADC_Init'?
+   96 |     stcDmaInit.u32SrcAddr       = (uint32_t)&ISENSE_ADC_UNIT->DR0;
+      |                                              ^~~~~~~~~~~~~~~
+      |                                              ISENSE_ADC_Init
+./PSFB/adc.c:103:14: error: 'ISENSE_DMA_UNIT' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
+  103 |     DMA_Init(ISENSE_DMA_UNIT, ISENSE_DMA_CH, &stcDmaInit);
+      |              ^~~~~~~~~~~~~~~
+      |              ISENSE_DMA_Init
+./PSFB/adc.c:103:31: error: 'ISENSE_DMA_CH' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
+  103 |     DMA_Init(ISENSE_DMA_UNIT, ISENSE_DMA_CH, &stcDmaInit);
+      |                               ^~~~~~~~~~~~~
+      |                               ISENSE_DMA_Init
+./PSFB/adc.c: In function 'ISENSE_ReadRaw':
+./PSFB/adc.c:123:35: error: 'ISENSE_DMA_UNIT' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
+  123 |     u32Remain = DMA_GetTransCount(ISENSE_DMA_UNIT, ISENSE_DMA_CH);
+      |                                   ^~~~~~~~~~~~~~~
+      |                                   ISENSE_DMA_Init
+./PSFB/adc.c:123:52: error: 'ISENSE_DMA_CH' undeclared (first use in this function); did you mean 'ISENSE_DMA_Init'?
+  123 |     u32Remain = DMA_GetTransCount(ISENSE_DMA_UNIT, ISENSE_DMA_CH);
+      |                                                    ^~~~~~~~~~~~~
+      |                                                    ISENSE_DMA_Init
+./PSFB/adc.c: In function 'ISENSE_Sample':
+./PSFB/adc.c:160:21: error: implicit declaration of function 'ISENSE_ADC_TO_CURRENT' [-Wimplicit-function-declaration]
+  160 |     isenseLatestA = ISENSE_ADC_TO_CURRENT(u16Raw);
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+./PSFB/adc.c: In function 'ISENSE_CheckOverCurrent':
+./PSFB/adc.c:181:26: error: 'ISENSE_OVERCURRENT_A' undeclared (first use in this function)
+  181 |     if (isenseLatestA >= ISENSE_OVERCURRENT_A)
+      |                          ^~~~~~~~~~~~~~~~~~~~
+./PSFB/adc.c: At top level:
+./PSFB/adc.c:30:21: warning: 'isenseBuf' defined but not used [-Wunused-variable]
+   30 | static uint16_t     isenseBuf[ISENSE_FILTER_WINDOW] = {0};      // 采样数据滤波缓冲�?      |                     ^~~~~~~~~
+
+[2026-11-25 09:58:16]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 09:58:17]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/adc.o -MMD ./PSFB/adc.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/adc.c: In function 'ISENSE_CheckOverCurrent':
+./PSFB/adc.c:183:9: error: implicit declaration of function 'PSFB_Stop' [-Wimplicit-function-declaration]
+  183 |         PSFB_Stop();
+      |         ^~~~~~~~~
+
+[2026-11-25 09:58:54]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 09:58:54]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/adc.o -MMD ./PSFB/adc.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/adc.c:175:7: error: expected ';' before 'void'
+  175 | EXTERN void PSFB_Stop(void);
+      |       ^~~~~
+      |       ;
+
+[2026-11-25 09:59:07]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\psfb.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 09:59:10]	[done]
+	build successfully !
+
+[2026-11-25 10:00:22]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 10:00:25]	[done]
+	build successfully !
+
+[2026-11-25 14:07:15]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\adc.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\i2c.c': object (.o) file not exist
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 14:07:16]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\i2c.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/i2c.o -MMD ./PSFB/i2c.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/i2c.c: In function 'I2C_Init':
+./PSFB/i2c.c:28:5: error: implicit declaration of function 'I2C_StructInit'; did you mean 'ADC_StructInit'? [-Wimplicit-function-declaration]
+   28 |     I2C_StructInit(&stcI2cInit);
+      |     ^~~~~~~~~~~~~~
+      |     ADC_StructInit
+./PSFB/i2c.c:28:21: error: 'stcI2cInit' undeclared (first use in this function)
+   28 |     I2C_StructInit(&stcI2cInit);
+      |                     ^~~~~~~~~~
+./PSFB/i2c.c:28:21: note: each undeclared identifier is reported only once for each function it appears in
+./PSFB/i2c.c: At top level:
+./PSFB/i2c.c:32:1: warning: '/*' within comment [-Wcomment]
+   32 | /***********************************************************************/
+./PSFB/i2c.c: In function 'I2C_BSP_Init':
+./PSFB/i2c.c:42:5: error: implicit declaration of function 'I2C_DMA_Init'; did you mean 'I2C_BSP_Init'? [-Wimplicit-function-declaration]
+   42 |     I2C_DMA_Init();
+      |     ^~~~~~~~~~~~
+      |     I2C_BSP_Init
+
+[2026-11-25 14:07:43]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\i2c.c': object (.o) file not exist
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 14:07:46]	[done]
+	build successfully !
+
+[2026-11-25 14:08:09]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\i2c.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 14:08:12]	[done]
+	build successfully !
+
+[2026-11-25 15:18:40]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 15:18:42]	[done]
+	build successfully !
+
+[2026-11-25 15:30:00]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 15:30:01]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/source/main.o -MMD ./source/main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./source/main.c: In function 'main':
+./source/main.c:91:29: error: implicit declaration of function 'ISENSE_Sample' [-Wimplicit-function-declaration]
+   91 |             float current = ISENSE_Sample();
+      |                             ^~~~~~~~~~~~~
+
+[2026-11-25 15:30:28]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 15:30:30]	[done]
+	build successfully !
+
+[2026-11-25 15:32:45]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 15:32:47]	[done]
+	build successfully !
+
+[2026-11-25 16:24:18]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': object (.o) file not exist
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 16:24:18]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/PSFB/pwm.o -MMD ./PSFB/pwm.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./PSFB/pwm.c: In function 'PWM_TIM_Init':
+./PSFB/pwm.c:67:5: error: implicit declaration of function 'TMRA_ClearCount' [-Wimplicit-function-declaration]
+   67 |     TMRA_ClearCount(CM_TMRA_4);
+      |     ^~~~~~~~~~~~~~~
+./PSFB/pwm.c:68:5: error: implicit declaration of function 'TMRA_PWM_Start'; did you mean 'TMRA_Start'? [-Wimplicit-function-declaration]
+   68 |     TMRA_PWM_Start(CM_TMRA_4, TMRA_CH3);
+      |     ^~~~~~~~~~~~~~
+      |     TMRA_Start
+
+[2026-11-25 16:24:30]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': object (.o) file not exist
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 16:24:33]	[done]
+	build successfully !
+
+[2026-11-25 17:05:59]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:06:01]	[done]
+	build successfully !
+
+[2026-11-25 17:09:30]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:09:31]	compilation failed at : "c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c", exit code: 1
+command: 
+  "C:\Users\rsta1033\.eide\tools\gcc_arm\bin\arm-none-eabi-gcc.exe" -c -xc -std=gnu99 -I. -ICMSIS/Core/Include -Icommon -Idriver/inc -Isource -IPSFB -D"__DEBUG" -D"HC32F334" -D"USE_DDL_DRIVER" -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -O0 -Wall -g -ffunction-sections -fdata-sections -fsigned-char --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall -o ./build/Debug/.obj/source/main.o -MMD ./source/main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+./source/main.c: In function 'main':
+./source/main.c:55:5: error: implicit declaration of function 'PWM_BSP_Init'; did you mean 'PSFB_BSP_Init'? [-Wimplicit-function-declaration]
+   55 |     PWM_BSP_Init();                 // 初始化PWM
+      |     ^~~~~~~~~~~~
+      |     PSFB_BSP_Init
+
+[2026-11-25 17:09:45]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:09:47]	[done]
+	build successfully !
+
+[2026-11-25 17:16:52]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:16:54]	[done]
+	build successfully !
+
+[2026-11-25 17:17:35]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:17:37]	[done]
+	build successfully !
+
+[2026-11-25 17:18:05]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:18:07]	[done]
+	build successfully !
+
+[2026-11-25 17:18:36]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:18:38]	[done]
+	build successfully !
+
+[2026-11-25 17:20:47]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:20:49]	[done]
+	build successfully !
+
+[2026-11-25 17:21:41]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:21:43]	[done]
+	build successfully !
+
+[2026-11-25 17:23:37]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:23:39]	[done]
+	build successfully !
+
+[2026-11-25 17:24:06]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:24:08]	[done]
+	build successfully !
+
+[2026-11-25 17:24:28]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:24:30]	[done]
+	build successfully !
+
+[2026-11-25 17:24:52]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:24:54]	[done]
+	build successfully !
+
+[2026-11-25 17:25:02]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:25:05]	[done]
+	build successfully !
+
+[2026-11-25 17:25:25]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:25:27]	[done]
+	build successfully !
+
+[2026-11-25 17:27:36]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\PSFB\pwm.c': source file has been changed.
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:27:39]	[done]
+	build successfully !
+
+[2026-11-25 17:27:48]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:27:50]	[done]
+	build successfully !
+
+[2026-11-25 17:29:49]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'c:\Users\rsta1033\Desktop\Starter\HC32F334\F334_LQ64_DAB\XHCODE\Eclipse\source\main.c': source file is always in build.
+
+[2026-11-25 17:29:51]	[done]
+	build successfully !
+

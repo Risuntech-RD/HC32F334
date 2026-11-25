@@ -1,5 +1,7 @@
 ./build/Debug/.obj/GCC/startup_hc32f334.o
+./build/Debug/.obj/PSFB/adc.o
 ./build/Debug/.obj/PSFB/psfb.o
+./build/Debug/.obj/PSFB/pwm.o
 ./build/Debug/.obj/common/syscalls.o
 ./build/Debug/.obj/common/system_hc32f334.o
 ./build/Debug/.obj/driver/src/hc32_ll.o

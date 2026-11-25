@@ -14,6 +14,10 @@
 #include <stdio.h>
 #include "hc32_ll.h"
 #include "psfb.h"
+#include "adc.h"
+#include "pwm.h"
+
+
 
 /** 全局函数声明 */
 static void     App_PortCfg(void);

@@ -1,7 +1,9 @@
 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T c:/Users/rsta1033/Desktop/Starter/HC32F334/F334_LQ64_DAB/XHCODE/Eclipse/GCC/HC32F334xA.ld -Wl,--gc-sections -Wl,--print-memory-usage --specs=nano.specs --specs=nosys.specs -fmessage-length=0 -mthumb-interwork -Wall
 -Wl,-Map=./build/Debug/XHCODE.map
 -o ./build/Debug/XHCODE.elf ./build/Debug/.obj/GCC/startup_hc32f334.o
+./build/Debug/.obj/PSFB/adc.o
 ./build/Debug/.obj/PSFB/psfb.o
+./build/Debug/.obj/PSFB/pwm.o
 ./build/Debug/.obj/common/syscalls.o
 ./build/Debug/.obj/common/system_hc32f334.o
 ./build/Debug/.obj/driver/src/hc32_ll.o

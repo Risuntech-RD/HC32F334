@@ -11,4 +11,4 @@ build/Debug/.obj/source/main.o: source/main.c source/main.h \
  driver/inc/hc32_ll_utility.h driver/inc/hc32_ll_icg.h \
  driver/inc/hc32_ll_interrupts.h driver/inc/hc32_ll_pwc.h \
  driver/inc/hc32_ll_sram.h driver/inc/hc32_ll_tmra.h \
- driver/inc/hc32_ll_usart.h PSFB/psfb.h
+ driver/inc/hc32_ll_usart.h PSFB/psfb.h PSFB/adc.h PSFB/pwm.h

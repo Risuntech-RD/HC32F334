@@ -26,7 +26,9 @@
     ],
     "sourceList": [
         "GCC/startup_hc32f334.S",
+        "PSFB/adc.c",
         "PSFB/psfb.c",
+        "PSFB/pwm.c",
         "common/syscalls.c",
         "common/system_hc32f334.c",
         "driver/src/hc32_ll.c",
